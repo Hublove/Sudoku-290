@@ -1,1 +1,1 @@
-Sedoku
+Sudoku
