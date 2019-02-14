@@ -30,6 +30,10 @@ public class View extends Application{
 		Scene scene = new Scene();
 	}
 	
+	public Scene initInstructionScene() {
+		Scene scene = new Scene();
+	}
+	
 	void initUI(Stage stage) {
 		Scene scene = initStartScene();
 		Controller controller = new StartController();
