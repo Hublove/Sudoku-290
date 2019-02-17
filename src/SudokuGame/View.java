@@ -27,10 +27,12 @@ public class View extends Application{
 	
 	public Scene initStartScene() {
 		Scene scene = new Scene();
+		return scene;
 	}
 	
 	public Scene initEndScene() {
 		Scene scene = new Scene();
+		return scene;
 	}
 	
 	/**
