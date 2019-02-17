@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.animation.AnimationTimer;
 
 public class View extends Application{	
+	private gameControlPanel gameControlPanel;
 	
 	Image boardBackImage = new Image("/image/bordBack.png"),
 			numBackImage = new Image("/image/numBack.png"),
@@ -41,6 +42,8 @@ public class View extends Application{
 	 * 		sudoku game
 	 */
 	public Scene initGameScene() {
+		gameControlPanel = new gameControlPanel(this);
+		
 		Group view = new Group();
 		//back ground imageView
 		ImageView boardBackView = new ImageView(boardBackImage);
@@ -105,8 +108,18 @@ public class View extends Application{
 		num2cView.relocate(64+1*60, 60+1*60);
 		view.getChildren().add(num2cView);
 		
+		
+		//add the game control panel on the right
+		gameControlPanel.relocate(650, 150);
+		view.getChildren().add(gameControlPanel);
+		
+		
+		
 		Scene scene = new Scene(view, 810, 640);
 		return scene;
+		
+		
+		
 	}
 	
 	public Scene initInstructionScene() {
