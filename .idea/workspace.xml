@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64dda1f6-444a-4d0a-b04e-c432e24e9375" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SudokuGame/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SudokuGame/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SudokuGame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SudokuGame/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SudokuGame/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SudokuGame/Box.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SudokuGame/SudokuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SudokuGame/SudokuModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/src/SudokuGame/SudokuModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#979#988#0" expanded="true" />
@@ -143,7 +138,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550449510726" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550449644553" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -195,16 +190,15 @@
       <updated>1550427015097</updated>
       <workItem from="1550427016322" duration="2041000" />
       <workItem from="1550437486976" duration="260000" />
-      <workItem from="1550437786864" duration="8543000" />
+      <workItem from="1550437786864" duration="9142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10844000" />
+    <option name="totallyTimeSpent" value="11443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1035" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1673866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -332,7 +326,7 @@
     <entry file="file://$PROJECT_DIR$/src/SudokuGame/SudokuModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#979#988#0" expanded="true" />

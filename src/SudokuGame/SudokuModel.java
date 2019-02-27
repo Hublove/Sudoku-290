@@ -19,7 +19,7 @@ public class SudokuModel {
         if (!areRowsSolved(blocks)) {
             return false;
         }
-        
+
         return true;
     }
 
