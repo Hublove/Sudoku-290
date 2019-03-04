@@ -5,6 +5,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
+/**
+ * the control panel of the game
+ * include three buttons 
+ * @return none
+ * 		construct three buttons for the game 
+ * 		view
+ */
 public class gameControlPanel extends GridPane implements EventHandler<ActionEvent> {
 
 	private View view; // So we can talk to our parent or other components of the view
@@ -31,6 +38,16 @@ public class gameControlPanel extends GridPane implements EventHandler<ActionEve
 		this.add(restartButton, 0, 2);
 		restartButton.setOnAction(restartHandler);
 	}
+	
+	
+	
+	/**
+	 * the handler of the submit button
+	 * move the the submit page
+	 * @return none
+	 * 		the button that show the result to player when
+	 * 		they hit the button
+	 */
 	@Override
 	//handle after submit button is being pressed
 	public void handle(ActionEvent event) {
