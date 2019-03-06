@@ -1,5 +1,8 @@
 package SudokuGame;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -185,12 +188,25 @@ public class View extends Application{
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
 		stage.show();
+		
+		timeCounter = 0;
+		AnimationTimer timer = new AnimationTimer() {
+	        @Override
+	        public void handle(long now) {
+	        	controller.updateTimer();
+	        }
+	    };
+	    
+        Timer FPStimer = new Timer();
+        TimerTask Task1 = new TimerTask() {
+            @Override
+            public void run() {
+            	timeCounter ++;
+            }
+        };
+        FPStimer.scheduleAtFixedRate(Task1, 0l, 1000);
+	    
+	    timer.start();
 	}
-	
-	AnimationTimer timer = new AnimationTimer() {
-        @Override
-        public void handle(long now) {
-        }
-    };
 
 }
