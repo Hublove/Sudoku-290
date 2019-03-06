@@ -147,6 +147,33 @@ public class View extends Application{
 		return scene;
 	}
 	
+	/**
+	 * update the ImageViews of the Box at the given
+	 * coordinate
+	 * @param x x coordinate
+	 * @param y y coordinate
+	 */
+	public void updateUserNum(int x, int y) {
+		if (model.board.getUserNum(x, y).size() == 1) { //show big view
+			for (int i = 0; i < 9; i++) {//disable all temp views
+				numView[x][y][i % 3 + 1][i / 3 + 1].setVisible(false);;
+			}
+			numView[x][y][0][0].setImage(Box.nums[model.board.getUserNum(x, y).get(0)]);
+			//System.out.println(model.board.getUserNum(x, y).get(0));
+		}else if (model.board.getUserNum(x, y).size() >= 1){ //show temp views
+			numView[x][y][0][0].setImage(null);
+			for (int i = 0; i < 9; i++) {
+				numView[x][y][i % 3 + 1][i / 3 + 1].setVisible(false);;
+			}
+			for (int num: model.board.getUserNum(x, y)) {
+				num --;
+				numView[x][y][num % 3 + 1][3 - num / 3].setVisible(true);;
+			}
+		}else { //show nothing
+			numView[x][y][0][0].setImage(null);
+		}
+	}
+	
 	public Scene initInstructionScene() {
 		Scene scene = new Scene();
 	}
