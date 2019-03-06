@@ -34,6 +34,8 @@ public class View extends Application{
 	
 	SudokuModel model;
 	Controller controller;
+	ButtonPanel buttonPanel;
+	
 	long timeCounter;
 	
 	public static void main(String[] args) {
@@ -136,6 +138,8 @@ public class View extends Application{
 				}
 			}
 		}
+		buttonPanel = new ButtonPanel(view);
+		
 		
 		//set up timer related view
 		gearView = new ImageView(gearImage);
