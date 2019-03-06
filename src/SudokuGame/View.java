@@ -7,15 +7,32 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.animation.AnimationTimer;
 
+/**
+ * view part of the Sudoku game
+ */
 public class View extends Application{	
 	
-	Image boardBackImage = new Image("/image/bordBack.png"),
+	static Image boardBackImage = new Image("/image/bordBack.png"),
 			numBackImage = new Image("/image/numBack.png"),
-			num1Image = new Image("/image/num/1d.png"),
-			num2cImage = new Image("/image/num/2c.png");
+			numBackSelImage = new Image("/image/numBackSel.png"),
+			gearImage = new Image("/image/gear.png");
+	
+	ImageView numView[][][][],
+	//[x coordinate for box][y coordinate for box][x coordinate for temp num][y coordinate for temp num] 
+	//the last two count start at 1. 0 for the big view of that box
+		numBackView[][], gearView;
+	Group numViewGroup[][];
+	Text timeText;
+	
+	SudokuModel model;
+	Controller controller;
+	long timeCounter;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -84,30 +101,49 @@ public class View extends Application{
 		inBoardV2.relocate(409, 50);
 		view.getChildren().add(inBoardV2);
 		
+		model = new SudokuModel();
+		System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
+		model.diGenGame();
+		Scene scene = new Scene(view, 810, 640);
 		//imageView of background of number boxes
-		ImageView numBackViews[][] = new ImageView[9][9];
+		numBackView = new ImageView[9][9];
+		numView = new ImageView[9][9][4][4];
 		for (int x = 0; x < 9; x++) {
 			for (int y = 0; y < 9; y++) {
-				numBackViews[x][y] = new ImageView(numBackImage);
-				numBackViews[x][y].relocate(55+x*60, 55+y*60);
-				view.getChildren().add(numBackViews[x][y]);
+				numBackView[x][y] = new ImageView(numBackImage);
+				numBackView[x][y].relocate(55+x*60, 55+y*60);
+				view.getChildren().add(numBackView[x][y]);
+				numView[x][y][0][0] = new ImageView();
+				if (model.board.getNum(x, y) > 0) {
+					numView[x][y][0][0].setImage(Box.cnums[model.board.getNum(x, y)]);
+				}
+				numView[x][y][0][0].setFitHeight(40);
+				numView[x][y][0][0].setFitWidth(32);
+				numView[x][y][0][0].relocate(64+x*60, 60+y*60);
+				view.getChildren().add(numView[x][y][0][0]);
+				for (int sx = 1; sx < 4; sx++) {//add temp views for that box
+					for (int sy = 1; sy < 4; sy++) {
+						numView[x][y][sx][sy] = new ImageView(Box.nums[(sx) + (3 - sy) * 3]);
+						numView[x][y][sx][sy].setFitHeight(13);
+						numView[x][y][sx][sy].setFitWidth(10);
+						numView[x][y][sx][sy].relocate(64+x*60+(sx-1)*16, 60+y*60+(sy-1)*16);
+						numView[x][y][sx][sy].setVisible(false);
+						view.getChildren().add(numView[x][y][sx][sy]);
+					}
+				}
 			}
 		}
 		
-		//sample of number 1 and 2 in box
-		ImageView num1View = new ImageView(num1Image);
-		num1View.setFitHeight(40);
-		num1View.setFitWidth(32);
-		num1View.relocate(64+0*60, 60+0*60);
-		view.getChildren().add(num1View);
-		
-		ImageView num2cView = new ImageView(num2cImage);
-		num2cView.setFitHeight(40);
-		num2cView.setFitWidth(32);
-		num2cView.relocate(64+1*60, 60+1*60);
-		view.getChildren().add(num2cView);
-		
-		Scene scene = new Scene(view, 810, 640);
+		//set up timer related view
+		gearView = new ImageView(gearImage);
+		gearView.setFitHeight(200);
+		gearView.setFitWidth(200);
+		gearView.relocate(595, 525);
+		view.getChildren().add(gearView);
+		timeText = new Text(648, 630, "00:00");
+		timeText.setFont(new Font(40));
+		view.getChildren().add(timeText);
+
 		return scene;
 	}
 	
