@@ -1,7 +1,6 @@
 package SudokuGame;
 
 import java.util.ArrayList;
-
 /**
  *The class that will contain information about a single block
  */

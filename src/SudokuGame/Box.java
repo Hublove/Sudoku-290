@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javafx.scene.image.Image;
 
+
 /**
  *The class that will contain information about a single box
  */
@@ -25,7 +26,7 @@ public class Box {
 	
 	/**
 	 * Initialize Box that have the given number
-	 * @param int num should be system set number
+	 * @param num should be system set number
 	 */
 	public Box(int num) {
 		this.num = num;
@@ -48,7 +49,7 @@ public class Box {
 	
 	/**
 	 * remove the given num from avalNum
-	 * @param int num that want to remove
+	 * @param num that want to remove
 	 */
 	public void remAvalNum(int num) {
 		avalNum.remove((Integer)num);
@@ -72,7 +73,7 @@ public class Box {
 	
 	/**
 	 * set num to the new value
-	 * @param int num the new value of num
+	 * @param num the new value of num
 	 */
 	public void setNum(int num) {
 		this.num = num;
@@ -81,7 +82,7 @@ public class Box {
 	/**
 	 * add the num to userNum if not in it 
 	 * or remove if not in it
-	 * @param int num want to change
+	 * @param num want to change
 	 */
 	public void setUserNum(int num) {
 		if (userNum.indexOf(num) < 0) {//not in userNum
