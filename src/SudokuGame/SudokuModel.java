@@ -14,6 +14,11 @@ public class SudokuModel {
         board = new Board();
     }
 
+    /**
+     * Checks if a column on the board is solved
+     *
+     * @param diff What difficulty the game will be set to (easy, medium, or hard)
+     */
     public void diGenGame(String diff) {
         Random rand = new Random();
         int toRemove = 0;
@@ -40,6 +45,7 @@ public class SudokuModel {
         }
 
     }
+
 
     public void genNewGame() {
         Random rand = new Random();
@@ -78,6 +84,12 @@ public class SudokuModel {
         }
     }
 
+    /**
+     * Checks if a column on the board is solved
+     *
+     * @param row   The row to shift
+     * @param amount   How many digits to shift the column
+     */
     public void shiftRow(int[] row, int amount) {
 
         if (amount == 3) {
@@ -128,6 +140,11 @@ public class SudokuModel {
         return true;
     }
 
+    /**
+     * Checks if a block is solved
+     *
+     * @param block   Block to check
+     */
     public boolean isBlockSolved(Block block) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         for (int i = 1; i < 10; i++) {
@@ -149,6 +166,12 @@ public class SudokuModel {
         return true;
     }
 
+    /**
+     * Checks if a row on the board is solved
+     *
+     * @param board   Board to work on
+     * @param rowNum   Which row to check
+     */
     public boolean isRowSolved(Board board, int rowNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         for (int i = 1; i < 10; i++) {
@@ -169,6 +192,12 @@ public class SudokuModel {
         return true;
     }
 
+    /**
+     * Checks if a column on the board is solved
+     *
+     * @param board   Board to work on
+     * @param colNum   Which column to check
+     */
     public boolean isColumnSolved(Board board, int colNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         for (int i = 1; i < 10; i++) {
