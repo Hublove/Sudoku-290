@@ -51,7 +51,7 @@ public class View extends Application{
 		Scene scene = new Scene();
 		return scene;
 	}
-	
+
 	public Scene initEndScene() {
 		Scene scene = new Scene();
 		return scene;
@@ -107,7 +107,7 @@ public class View extends Application{
 		view.getChildren().add(inBoardV2);
 		
 		model = new SudokuModel();
-		System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
+		//System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
 		model.diGenGame();
 		Scene scene = new Scene(view, 810, 640);
 		//imageView of background of number boxes
@@ -187,7 +187,7 @@ public class View extends Application{
 	
 	void initUI(Stage stage) {
 		Scene scene = initGameScene();//changed for test
-		Controller controller = new StartController();
+		Controller controller = new StartController(this);
 		
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
