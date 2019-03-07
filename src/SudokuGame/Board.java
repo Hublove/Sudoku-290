@@ -91,4 +91,8 @@ public class Board {
 	public ArrayList<Integer> getUserNum(int x, int y) {
 		return this.blocks[(x / 3) + (y / 3) * 3].getUserNum((x % 3) + (y % 3) * 3);
 	}
+
+	public Block[] getBlocks() {
+		return this.blocks;
+	}
 }
