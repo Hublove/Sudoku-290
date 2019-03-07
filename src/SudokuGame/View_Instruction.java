@@ -21,7 +21,7 @@ import javafx.animation.AnimationTimer;
 public class View_Instruction extends Application{
 	
 	//Images for Instruction Screen
-	Image instructions_image = new Image("/image/instructionscreen_nobutton.png"),
+	Image instructions_image = new Image("/image/instructions.png"),
 			start_image = new Image("/image/start.png");
 	
 	public static void main(String[] args) {
@@ -51,17 +51,27 @@ public class View_Instruction extends Application{
 		
 		
 		//Start Button
-		Button button_instruction_start = new Button(null, new ImageView(start_image));
-		view.getChildren().add(button_instruction_start);
-		button_instruction_start.setStyle("-fx-faint-focus-color: transparent;"
+		Button buttonInstructionStart = new Button(null, new ImageView(start_image));
+		view.getChildren().add(buttonInstructionStart);
+		buttonInstructionStart.setStyle("-fx-border-color: transparent;"
+	    + "-fx-border-width: 0;"
+	    + "-fx-background-radius: 0;"
+	    + "-fx-background-color: transparent;"
+	    + "-fx-font-family:'Segoe UI', Helvetica, Arial, sans-serif;"
+	    + "-fx-font-size: 1em;" /* 12 */
+	    + "-fx-text-fill: #828282;");
+		
+		
+		/*buttonInstructionStart.setStyle("-fx-faint-focus-color: transparent;"
+		 
 				+ "-fx-focus-color: transparent;"
 				+ "-fx-font: 22 arial;"
-				+ "-fx-base: #000000;"
-				+ "-fx-background-insets: -1.4, 0, 1, 2;");
+				+ "-fx-background-insets: -1, 0, 1, 2;");
+		*/
 		
 		//Location of Button
-		button_instruction_start.setTranslateX(475);
-		button_instruction_start.setTranslateY(350);
+		buttonInstructionStart.setTranslateX(475);
+		buttonInstructionStart.setTranslateY(450);
 		
 		//Create the scene with the Instruction Components
 		Scene scene = new Scene(view, 810, 640);
