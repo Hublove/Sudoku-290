@@ -50,14 +50,35 @@ public class SudokuModel {
 
     }
 
+    /**
+     * Checks if a number already exists in the row
+     *
+     * @param row The row that is being checked
+     * @param num The number that is being checked
+     */
+    public boolean isInRow(int[] row, int num) {
+        for (int i = 0; i < 9; i++) {
+            if (row[i] == num)
+                return true;
+        }
+        return false;
+    }
 
+
+    /**
+     * Generates a new Sudoku board
+     */
     public void genNewGame() {
         Random rand = new Random();
+        int num = 0;
 
         int[] row = new int[9];
 
         for (int i = 0; i < 9; i++) {
-            row[i] = rand.nextInt(9) + 1;
+            while (isInRow(row, num)) {
+                num = rand.nextInt(9) + 1;
+            }
+            row[i] = num;
         }
 
         setRow(board, row, 0);
@@ -82,6 +103,14 @@ public class SudokuModel {
 
     }
 
+
+    /**
+     * Checks if a column on the board is solved
+     *
+     * @param board The board which will be written to
+     * @param row   The row that will be written to the board
+     * @param rowNum The index of the row to set
+     */
     public void setRow(Board board, int[] row, int rowNum) {
         for (int i = 0; i < 9; i++) {
             board.setNum(i, rowNum, row[i]);
@@ -120,7 +149,9 @@ public class SudokuModel {
 
     }
 
-
+    /**
+     * Checks if the game is solved according to Sudoku rules
+     */
     public boolean isGameSolved() {
         Block[] blocks = board.getBlocks();
 

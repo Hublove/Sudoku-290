@@ -50,15 +50,15 @@ public class View extends Application{
 		initUI(primaryStage);
 	}
 	
-	public Scene initStartScene() {
-		Scene scene = new Scene();
-		return scene;
-	}
-
-	public Scene initEndScene() {
-		Scene scene = new Scene();
-		return scene;
-	}
+//	public Scene initStartScene() {
+//		Scene scene = new Scene();
+//		return scene;
+//	}
+//
+//	public Scene initEndScene() {
+//		Scene scene = new Scene();
+//		return scene;
+//	}
 	
 	/**
 	 * the constructor of the game scene
@@ -110,7 +110,6 @@ public class View extends Application{
 		view.getChildren().add(inBoardV2);
 		
 		model = new SudokuModel();
-		//System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
 		model.genNewGame();
 		model.diGenGame("easy");
 		Scene scene = new Scene(view, 810, 640);
@@ -185,9 +184,9 @@ public class View extends Application{
 		}
 	}
 	
-	public Scene initInstructionScene() {
-		Scene scene = new Scene();
-	}
+//	public Scene initInstructionScene() {
+//		Scene scene = new Scene();
+//	}
 	
 	void initUI(Stage stage) {
 		Scene scene = initGameScene();//changed for test

@@ -27,13 +27,13 @@ public class View_temp extends Application{
 		initUI(primaryStage);
 	}
 	
-	public Scene initStartScene() {
-		Scene scene = new Scene();
-	}
+//	public Scene initStartScene() {
+//		Scene scene = new Scene();
+//	}
 	
-	public Scene initEndScene() {
-		Scene scene = new Scene();
-	}
+//	public Scene initEndScene() {
+//		Scene scene = new Scene();
+//	}
 	
 	/**
 	 * the constructor of the game scene
@@ -122,13 +122,13 @@ public class View_temp extends Application{
 		return scene;
 	}
 	
-	public Scene initInstructionScene() {
-		Scene scene = new Scene();
-	}
+//	public Scene initInstructionScene() {
+//		Scene scene = new Scene();
+//	}
 	
 	void initUI(Stage stage) {
 		Scene scene = initGameScene();//changed for test
-		Controller controller = new StartController();
+//		Controller controller = new StartController();
 		
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
