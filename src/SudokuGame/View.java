@@ -111,7 +111,8 @@ public class View extends Application{
 		
 		model = new SudokuModel();
 		//System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
-		model.diGenGame();
+		model.genNewGame();
+		model.diGenGame("easy");
 		Scene scene = new Scene(view, 810, 640);
 		//imageView of background of number boxes
 		numBackView = new ImageView[9][9];
