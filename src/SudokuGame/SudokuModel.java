@@ -9,9 +9,13 @@ import java.util.Random;
 public class SudokuModel {
 
     public Board board;
+    boolean isEditing;
+    int editIndex[];
 
     public SudokuModel() {
         board = new Board();
+		isEditing = false;
+		editIndex = new int[2];
     }
 
     /**
