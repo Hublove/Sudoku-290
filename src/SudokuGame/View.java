@@ -5,10 +5,13 @@ import java.util.TimerTask;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -187,7 +190,49 @@ public class View extends Application{
 	
 	void initUI(Stage stage) {
 		Scene scene = initGameScene();//changed for test
-		Controller controller = new StartController(this);
+		controller = new SudokuController(this);
+		
+		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
+			
+			public void handle(KeyEvent event) {
+				controller.keyPressed(event);
+			}
+		});
+		
+		scene.setOnKeyReleased(new EventHandler<KeyEvent>(){
+					
+			public void handle(KeyEvent event) {
+				controller.keyReleased(event);
+			}
+		});
+		
+		scene.setOnMouseMoved(new EventHandler<MouseEvent>() {
+			
+			public void handle(MouseEvent e) {
+				controller.mouseMoved(e);
+			}
+		});
+		
+		scene.setOnMouseDragged(new EventHandler<MouseEvent>() {
+			
+			public void handle(MouseEvent e) {
+				controller.mouseDragged(e);
+			}
+		});
+		
+		scene.setOnMousePressed(new EventHandler<MouseEvent>() {
+			
+			public void handle(MouseEvent e) {
+				controller.mousePressed(e);
+			}
+		});
+
+		scene.setOnMouseReleased(new EventHandler<MouseEvent>() {
+			
+			public void handle(MouseEvent e) {
+				controller.mouseReleased(e);
+			}
+		});
 		
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
