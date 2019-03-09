@@ -61,6 +61,22 @@ public class SudokuController extends Controller{
 		if (x < 540 && y < 540 && x % 60 > 5 && x % 60 < 55 && y % 60 > 5 && y % 60 < 55) {
 			updateEdit(((int)x) / 60, ((int)y) / 60);
 		}
+		
+		
+	}
+	
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		double x = (e.getX());
+		double y = (e.getY());
+		
+		for (int i = 0; i < ButtonPanel.BUTTONNUM; i ++) {
+			if (x > 680 && y < 80 + 80 * i + 65 && x < 810 && y > 80 + 80 * i) {
+				view.buttonPanel.selectButton(i);
+			}else {
+				view.buttonPanel.leaveButton(i);
+			}
+		}
 	}
 
 	
@@ -145,5 +161,6 @@ public class SudokuController extends Controller{
 		}
 		view.timeText.setText(timeS);
 		view.gearView.setRotate(view.gearView.getRotate() + 0.2);
+		view.buttonPanel.updateAnimation();
 	}
 }

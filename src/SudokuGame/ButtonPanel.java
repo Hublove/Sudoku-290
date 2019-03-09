@@ -10,14 +10,11 @@ import javafx.scene.image.ImageView;
  * contain information about button panel
  */
 public class ButtonPanel {
-	static final int BUTTONNUM = 3, MAXLENGTH = 100, CHANGESPEED = 5;
-	static final Image buttonBack = new Image("/image/bordBack.png"), 
-			textBlackImage[] = {new Image("/image/num/0c.png"),
-					new Image("/image/num/0c.png"),
-					new Image("/image/num/0c.png")},
-			textColorImage[] = {new Image("/image/num/0d.png"),
-					new Image("/image/num/0d.png"),
-					new Image("/image/num/0d.png")};
+	static final int BUTTONNUM = 3, MAXLENGTH = 70, CHANGESPEED = 10;
+	static final Image buttonBack = new Image("/image/buttonBack.png"), 
+			textBlackImage[] = {new Image("/image/restartB.png"),
+					new Image("/image/checkB.png"),
+					new Image("/image/howB.png")};
 	
 	double animationCounter[];
 	ImageView buttonView[], textView[];
@@ -39,11 +36,13 @@ public class ButtonPanel {
 		
 		for (int i = 0; i < BUTTONNUM; i ++) {
 			animationCounter[i] = 0;
-			buttonView[i] = new ImageView();
-			buttonView[i].relocate(80 + 80 * i, 610);
+			buttonView[i] = new ImageView(buttonBack);
+			buttonView[i].setFitHeight(65);
+			buttonView[i].setFitWidth(200);
+			buttonView[i].relocate(680, 80 + 80 * i);
 			views.getChildren().add(buttonView[i]);
 			textView[i] = new ImageView(textBlackImage[i]);
-			textView[i].relocate(80 + 80 * i, 800 - textView[i].getFitWidth());
+			textView[i].relocate(800 - textBlackImage[i].getWidth(), 95 + 80 * i);
 			views.getChildren().add(textView[i]);
 			select[i] = false;
 		}
@@ -54,8 +53,10 @@ public class ButtonPanel {
 	 * @param index the index of the button
 	 */
 	public void selectButton(int index) {
+//		for (int i = 0; i < BUTTONNUM; i++) {
+//			leaveButton(i);
+//		}
 		select[index] = true;
-		textView[index].setImage(textColorImage[index]);
 	}
 	
 	/**
@@ -64,7 +65,6 @@ public class ButtonPanel {
 	 */
 	public void leaveButton(int index) {
 		select[index] = false;
-		textView[index].setImage(textBlackImage[index]);
 	}
 	
 	/**
@@ -77,8 +77,8 @@ public class ButtonPanel {
 			}else if ( !select[i] && animationCounter[i] > 0) {
 				animationCounter[i] -= CHANGESPEED;
 			}
-			buttonView[i].relocate(80 + 80 * i, 610 - animationCounter[i]);
-			textView[i].relocate(80 + 80 * i, 800 - textView[i].getFitWidth() - animationCounter[i]);
+			buttonView[i].relocate(680 - animationCounter[i], 80 + 80 * i);
+			textView[i].relocate(800 - textBlackImage[i].getWidth() - animationCounter[i], 95 + 80 * i);
 		}
 	}
 }
