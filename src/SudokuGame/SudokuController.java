@@ -60,6 +60,17 @@ public class SudokuController extends Controller{
 		
 		if (x < 540 && y < 540 && x % 60 > 5 && x % 60 < 55 && y % 60 > 5 && y % 60 < 55) {
 			updateEdit(((int)x) / 60, ((int)y) / 60);
+		}else {
+			for(int i = 0; i < ButtonPanel.BUTTONNUM; i ++) {
+				if (view.buttonPanel.select[i]) {
+					switch(i) {
+					case 1:
+						boolean isWin = view.model.isGameSolved();
+						System.out.println(isWin);
+						break;
+					}
+				}
+			}
 		}
 		
 		
