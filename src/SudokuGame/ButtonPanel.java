@@ -17,8 +17,7 @@ public class ButtonPanel {
 					new Image("/image/howB.png")};
 	
 	double animationCounter[];
-	ImageView buttonView[], textView[];
-	boolean select[];
+	ImageView buttonView[], textView[], select;
 	
 	Group views;
 	
@@ -30,7 +29,7 @@ public class ButtonPanel {
 		animationCounter = new double[BUTTONNUM];
 		buttonView = new ImageView[BUTTONNUM];
 		textView = new ImageView[BUTTONNUM];
-		select = new boolean[BUTTONNUM];
+		select = null;
 		views = new Group();
 		mainView.getChildren().add(views);
 		
@@ -44,7 +43,6 @@ public class ButtonPanel {
 			textView[i] = new ImageView(textBlackImage[i]);
 			textView[i].relocate(800 - textBlackImage[i].getWidth(), 95 + 80 * i);
 			views.getChildren().add(textView[i]);
-			select[i] = false;
 		}
 	}
 	
@@ -56,15 +54,15 @@ public class ButtonPanel {
 //		for (int i = 0; i < BUTTONNUM; i++) {
 //			leaveButton(i);
 //		}
-		select[index] = true;
+		select = buttonView[index];
 	}
 	
 	/**
 	 * set select of the button to false at given index
 	 * @param index the index of the button
 	 */
-	public void leaveButton(int index) {
-		select[index] = false;
+	public void leaveButton() {
+		select = null;
 	}
 	
 	/**
@@ -72,9 +70,9 @@ public class ButtonPanel {
 	 */
 	public void updateAnimation() {
 		for (int i = 0; i < BUTTONNUM; i ++) {
-			if (select[i] && animationCounter[i] < MAXLENGTH) {
+			if (select == buttonView[i] && animationCounter[i] < MAXLENGTH) {
 				animationCounter[i] += CHANGESPEED;
-			}else if ( !select[i] && animationCounter[i] > 0) {
+			}else if ( select != buttonView[i] && animationCounter[i] > 0) {
 				animationCounter[i] -= CHANGESPEED;
 			}
 			buttonView[i].relocate(680 - animationCounter[i], 80 + 80 * i);

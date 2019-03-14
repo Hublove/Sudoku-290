@@ -74,7 +74,7 @@ public class SudokuController extends Controller{
 			if (x > 680 && y < 80 + 80 * i + 65 && x < 810 && y > 80 + 80 * i) {
 				view.buttonPanel.selectButton(i);
 			}else {
-				view.buttonPanel.leaveButton(i);
+				view.buttonPanel.leaveButton();
 			}
 		}
 	}
