@@ -1,9 +1,15 @@
+/**
+ * 
+ * 
+ * @author Seungmin Baek
+ */
 
 package SudokuGame;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -21,32 +27,21 @@ import sun.audio.AudioStream;
 import sun.audio.ContinuousAudioDataStream;
 import javafx.animation.AnimationTimer;
 
-/**
- * The View class represents the user interface of Sudoku game.
- * @author Seungmin Baek
- */
-public class View extends Application {
+public class TempView extends Application{
 
-	//Images for the screen
+	//Images for Instruction Screen
 	Image startImage = new Image("/image/startscreen.png"),
 			startBImage = new Image("/image/playB.png"),
 			helpBImage = new Image("/image/helpB.png"),
 			instructionImage = new Image("/image/instructionscreen.png"),
 			boardImage = new Image("/image/bordBack.png");
 
-	/**
-	 * Main function of SudokuGame to run the game
-	 * @param   arge   the input to run the code
-	 */
+	int screen_state = 0;
+
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-	/**
-	 * Starts initUI function
-	 * @param   primaryStage   initial stage
-	 * @exception   Exception   if there is any error
-	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		initUI(primaryStage);
