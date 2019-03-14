@@ -2,12 +2,13 @@ package SudokuGame;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -21,9 +22,13 @@ import javafx.animation.AnimationTimer;
 /**
  * view part of the Sudoku game
  */
-public class View extends Application{	
+public class View extends Application {
 	
-	static Image boardBackImage = new Image("/image/bordBack.png"),
+	static Image startImage = new Image("/image/startscreen.png"),
+			startBImage = new Image("/image/playB.png"),
+			helpBImage = new Image("/image/helpB.png"),
+			instructionImage = new Image("/image/instructionscreen.png"),
+			boardBackImage = new Image("/image/bordBack.png"),
 			numBackImage = new Image("/image/numBack.png"),
 			numBackSelImage = new Image("/image/numBackSel.png"),
 			gearImage = new Image("/image/gear.png");
@@ -50,15 +55,98 @@ public class View extends Application{
 		initUI(primaryStage);
 	}
 	
-//	public Scene initStartScene() {
-//		Scene scene = new Scene();
-//		return scene;
-//	}
-//
-//	public Scene initEndScene() {
-//		Scene scene = new Scene();
-//		return scene;
-//	}
+
+	/**
+	 * Constructs the Instruction Scene with image of
+	 *  Sudoku rules and start button.
+	 * @return Scene
+	 */
+	public Scene initGameStartScene(Stage stage) {
+
+		Group view = new Group();
+
+		ImageView gameStartView = new ImageView(startImage);
+		gameStartView.setFitHeight(640);
+		gameStartView.setFitWidth(810);
+		gameStartView.relocate(0, 0);
+		Button buttonGameStart = new Button(null, new ImageView(startBImage));
+		Button buttonHelp = new Button(null, new ImageView(helpBImage));
+
+		// Instruction Screen
+		view.getChildren().add(gameStartView);
+
+		//Start Button
+		view.getChildren().add(buttonGameStart);
+		buttonGameStart.setStyle("-fx-border-color: transparent;"
+				+ "-fx-border-width: 0;"
+				+ "-fx-background-radius: 0;"
+				+ "-fx-background-color: transparent;"
+				+ "-fx-font-family:'Segoe UI', Helvetica, Arial, sans-serif;"
+				+ "-fx-font-size: 1em;"
+				+ "-fx-text-fill: #828282;");
+		buttonGameStart.setTranslateX(150);
+		buttonGameStart.setTranslateY(400);
+
+		view.getChildren().add(buttonHelp);
+		buttonHelp.setStyle("-fx-border-color: transparent;"
+				+ "-fx-border-width: 0;"
+				+ "-fx-background-radius: 0;"
+				+ "-fx-background-color: transparent;"
+				+ "-fx-font-family:'Segoe UI', Helvetica, Arial, sans-serif;"
+				+ "-fx-font-size: 1em;"
+				+ "-fx-text-fill: #828282;");
+		buttonHelp.setTranslateX(450);
+		buttonHelp.setTranslateY(400);
+
+		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				stage.setScene(initGameScene());
+			}
+		});
+
+		buttonHelp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				stage.setScene(initInstructionScene(stage));
+			}
+		});
+
+		Scene scene = new Scene(view, 810, 640);
+		return scene;
+
+	}
+
+	public Scene initInstructionScene(Stage stage) {
+
+		Group view = new Group();
+
+		ImageView gameView = new ImageView(instructionImage);
+		Button buttonGameStart = new Button(null, new ImageView(startBImage));
+		
+		view.getChildren().add(gameView);
+		
+		view.getChildren().add(buttonGameStart);
+		buttonGameStart.setStyle("-fx-border-color: transparent;"
+				+ "-fx-border-width: 0;"
+				+ "-fx-background-radius: 0;"
+				+ "-fx-background-color: transparent;"
+				+ "-fx-font-family:'Segoe UI', Helvetica, Arial, sans-serif;"
+				+ "-fx-font-size: 1em;"
+				+ "-fx-text-fill: #828282;");
+		buttonGameStart.setTranslateX(500);
+		buttonGameStart.setTranslateY(450);
+		
+		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				stage.setScene(initGameScene());
+
+			}
+		});
+
+		//Create the scene with the Instruction Components
+		Scene scene = new Scene(view, 810, 640);
+		return scene;
+
+	}
 	
 	/**
 	 * the constructor of the game scene
@@ -68,6 +156,7 @@ public class View extends Application{
 	 * 		sudoku game
 	 */
 	public Scene initGameScene() {
+		controller = new SudokuController(this);
 		Group view = new Group();
 		//back ground imageView
 		ImageView boardBackView = new ImageView(boardBackImage);
@@ -141,6 +230,7 @@ public class View extends Application{
 				}
 			}
 		}
+		
 		buttonPanel = new ButtonPanel(view);
 		
 		
@@ -153,7 +243,7 @@ public class View extends Application{
 		timeText = new Text(648, 630, "00:00");
 		timeText.setFont(new Font(40));
 		view.getChildren().add(timeText);
-
+		initController(scene);
 		return scene;
 	}
 	
@@ -184,14 +274,7 @@ public class View extends Application{
 		}
 	}
 	
-//	public Scene initInstructionScene() {
-//		Scene scene = new Scene();
-//	}
-	
-	void initUI(Stage stage) {
-		Scene scene = initGameScene();//changed for test
-		controller = new SudokuController(this);
-		
+	void initController(Scene scene) {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
 			
 			public void handle(KeyEvent event) {
@@ -233,6 +316,13 @@ public class View extends Application{
 				controller.mouseReleased(e);
 			}
 		});
+	}
+	
+	void initUI(Stage stage) {
+		Scene scene = initGameStartScene(stage);//changed for test
+		controller = new StartController(this);
+		initController(scene);
+		
 		
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
