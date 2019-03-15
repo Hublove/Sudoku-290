@@ -43,6 +43,7 @@ public class View extends Application {
 	SudokuModel model;
 	Controller controller;
 	ButtonPanel buttonPanel;
+	Stage stage;
 	
 	long timeCounter;
 	
@@ -138,7 +139,6 @@ public class View extends Application {
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initGameScene());
-
 			}
 		});
 
@@ -319,14 +319,15 @@ public class View extends Application {
 	}
 	
 	void initUI(Stage stage) {
-		Scene scene = initGameStartScene(stage);//changed for test
+		this.stage = stage;
+		Scene scene = initGameStartScene(this.stage);//changed for test
 		controller = new StartController(this);
 		initController(scene);
 		
 		
-		stage.setTitle("Sudoku game");
-		stage.setScene(scene);
-		stage.show();
+		this.stage.setTitle("Sudoku game");
+		this.stage.setScene(scene);
+		this.stage.show();
 		
 		timeCounter = 0;
 		AnimationTimer timer = new AnimationTimer() {

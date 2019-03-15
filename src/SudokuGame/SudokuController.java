@@ -64,9 +64,15 @@ public class SudokuController extends Controller{
 			for(int i = 0; i < ButtonPanel.BUTTONNUM; i ++) {
 				if (view.buttonPanel.select[i]) {
 					switch(i) {
+					case 0:
+						view.stage.setScene(view.initGameScene());
+						break;
 					case 1:
 						boolean isWin = view.model.isGameSolved();
 						System.out.println(isWin);
+						break;
+					case 2:
+						view.stage.setScene(view.initInstructionScene(view.stage));
 						break;
 					}
 				}
