@@ -3,6 +3,10 @@ package SudokuGame;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * abstract class for controllers
+ *
+ */
 public abstract class Controller {
 	View view;
 	

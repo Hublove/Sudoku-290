@@ -159,6 +159,9 @@ public class SudokuController extends Controller{
 		}
 	}
 	
+	/**
+	 * update the time text and rotate gear on game board
+	 */
 	public void updateTimer() {
 		int sec = (int)((view.timeCounter - this.startTime) % 60);
 		int min = (int)((view.timeCounter - this.startTime) / 60);

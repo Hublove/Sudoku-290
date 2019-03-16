@@ -13,16 +13,17 @@ public class Box {
 			new Image("/image/num/2d.png"), new Image("/image/num/3d.png"),
 			new Image("/image/num/4d.png"), new Image("/image/num/5d.png"),
 			new Image("/image/num/6d.png"), new Image("/image/num/7d.png"),
-			new Image("/image/num/8d.png"), new Image("/image/num/9d.png"),};
+			new Image("/image/num/8d.png"), new Image("/image/num/9d.png"),};//for user input number
 	
 	static Image cnums[] = {new Image("/image/num/0c.png"), new Image("/image/num/1c.png"),
 			new Image("/image/num/2c.png"), new Image("/image/num/3c.png"),
 			new Image("/image/num/4c.png"), new Image("/image/num/5c.png"),
 			new Image("/image/num/6c.png"), new Image("/image/num/7c.png"),
-			new Image("/image/num/8c.png"), new Image("/image/num/9c.png"),};
+			new Image("/image/num/8c.png"), new Image("/image/num/9c.png"),};//for system set number
 	
 	int num;
-	ArrayList<Integer> userNum, avalNum;
+	ArrayList<Integer> userNum, //for user input
+		avalNum;//for system generate new game
 	
 	/**
 	 * Initialize Box that have the given number

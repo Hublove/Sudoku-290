@@ -274,6 +274,10 @@ public class View extends Application {
 		}
 	}
 	
+	/**
+	 * set EventHandlers of scene to the current controller
+	 * @param scene the scene want to update
+	 */
 	void initController(Scene scene) {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
 			

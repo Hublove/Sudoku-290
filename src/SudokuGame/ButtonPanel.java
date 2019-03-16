@@ -34,7 +34,7 @@ public class ButtonPanel {
 		views = new Group();
 		mainView.getChildren().add(views);
 		
-		for (int i = 0; i < BUTTONNUM; i ++) {
+		for (int i = 0; i < BUTTONNUM; i ++) {//init button views
 			animationCounter[i] = 0;
 			buttonView[i] = new ImageView(buttonBack);
 			buttonView[i].setFitHeight(65);
