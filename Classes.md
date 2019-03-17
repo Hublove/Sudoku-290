@@ -13,7 +13,7 @@
 | -------------------------- | --------------------------------------------- |
 | Image nums[]               | Defines an array of blue number images.       |
 | Image cnums[]              | Defines an array of yellow number images.     |
-| Image int num              | Defines the Box number. If the Box’s num is not equal to -1, then the generator has set the num and the user will be unable to modify the num. If the Box’s num is equal to -1, then the user will be able to modify the num.|
+| int num                    | Defines the Box number. If the Box’s num is not equal to -1, then the generator has set the num and the user will be unable to modify the num. If the Box’s num is equal to -1, then the user will be able to modify the num.|
 | ArrayList<Integer> userNum | Defines the user’s numbers currently contained in the Box.
  If only one number is present then the number will be compared to the solution’s number. If more than one number is present than these numbers represent the player’s possible future moves.|
 | ArrayList<Integer> avalNum | Defines the numbers still available for the generator to use when constructing the board.|
