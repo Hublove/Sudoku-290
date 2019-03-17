@@ -14,6 +14,8 @@
 - One Box class is visually defined as a square on the gameboard with the background image of a tree trunk. The square may contain no integers, one integer, or more than one integer.
 - The `int num` and the `ArrayList<Integer> avalNum` are variables for generating the board based on the rules of Sudoku.
 
+
+### Box's Variables
 | Variable | Variable Definition |
 |:---------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Image nums[]` | Defines an array of blue number images. |
@@ -23,7 +25,7 @@
 | `ArrayList<Integer>avalNum` | Defines the numbers still available for the generator to use when constructing the board. |
 
 
-
+### Box's Functions
 | Function | Function Definition |
 |:--------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Box(int num)` | Initializes a class Box containing a num (set by the inputted integer selected by the generator), an empty userNum, and an empty avalNum. This Box class will not be modified by the user. |
@@ -42,7 +44,7 @@
 - The purpose of the Block class is to easily check if the numbers in the Block are following the rules of Sudoku. 
 - The code of Block class is mainly composed of setters and getters from the Box class. 
 
-
+### Block's Functions
 | Function | Function Definition |
 |:---------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Block()` | Initializes a class Block with 9 empty Box classes. |
@@ -68,12 +70,13 @@
 - The ` void setNum(int x, int y, int num)` and the ` void setUserNum(int x, int y, int num)` are functions for generating the board based on the rules of Sudoku.
 
 
+### Board's Variables
 | Variable       | Variable Definition              |
 |----------------|----------------------------------|
 | Block blocks[] | An empty array of Block classes. |
 
 
-
+### Board's Functions
 |                    Function                    | Function Defintion                                                                                                                                                                                                                                    |
 |:----------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                    `Board()`                   | Initializes a class Block with 9 empty Box classes.                                                                                                                                                                                                   |
@@ -84,3 +87,23 @@
 | `ArrayList<Integer> getUserNum(int x, int y)`  | Returns the userNum for the Box at the inputted xy-coordinate.                                                                                                                                                                                        |
 | `ArrayList<Integer> getUserNum(int x, int y)`  | Returns the avalNum for the Box at the inputted xy-coordinate.                                                                                                                                                                                        |
 | `void remAvalNum(int x, int y, int num)`       | Removes the inputted num for the Box at the inputted xy-coordinate.                                                                                                                                                                                   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
