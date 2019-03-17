@@ -67,6 +67,13 @@
 - The code of Board class is mainly composed of setters and getters from the Box class. 
 - The ` void setNum(int x, int y, int num)` and the ` void setUserNum(int x, int y, int num)` are functions for generating the board based on the rules of Sudoku.
 
+
+| Variable       | Variable Definition              |
+|----------------|----------------------------------|
+| Block blocks[] | An empty array of Block classes. |
+
+
+
 |                    Function                    | Function Defintion                                                                                                                                                                                                                                    |
 |:----------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                    `Board()`                   | Initializes a class Block with 9 empty Box classes.                                                                                                                                                                                                   |
@@ -77,8 +84,3 @@
 | `ArrayList<Integer> getUserNum(int x, int y)`  | Returns the userNum for the Box at the inputted xy-coordinate.                                                                                                                                                                                        |
 | `ArrayList<Integer> getUserNum(int x, int y)`  | Returns the avalNum for the Box at the inputted xy-coordinate.                                                                                                                                                                                        |
 | `void remAvalNum(int x, int y, int num)`       | Removes the inputted num for the Box at the inputted xy-coordinate.                                                                                                                                                                                   |
-
-
-
-
-
