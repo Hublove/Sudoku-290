@@ -43,7 +43,6 @@
 - The code of Block class is mainly composed of setters and getters from the Box class. 
 
 
-
 | Function | Function Definition |
 |:---------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Block()` | Initializes a class Block with 9 empty Box classes. |
