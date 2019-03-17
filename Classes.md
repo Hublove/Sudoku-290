@@ -31,7 +31,7 @@
 | `void setNum(int num)` | Sets the Box’s num with the inputted integer. |
 | `setUserNum(int num)` | Adds the inputted integer to userNum if userNum does not contain the number. Removes the inputted number from userNum if the userNum does contain the inputted integer. |
 | `int getNum()` | Returns the Box’s current num. |
-| `ArrayListInteger>getAvalNum()` | Returns the Box’s current avalNum. |
+| `ArrayList<Integer>getAvalNum()` | Returns the Box’s current avalNum. |
 | `ArrayList<Integer>getUserNum()` | Returns the Box’s current userNum. |
 | `void remAvalNum(int num)` | Removes the inputted num from avalNum. |
 
@@ -43,25 +43,23 @@
 - The code of Block class is mainly composed of setters and getters from the Box class. 
 
 
+
+
 | Function | Function Definition |
-|:---------------------------------------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:--------------------------------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Block()` | Initializes a class Block with 9 empty Box classes. |
-| `void setNum(int index, int num)` | - Sets the inputted num of the Box at the inputted index. - Removes the num from avalNum from all Box classes within the current Block.  - setNum is used to generate the board. |
-| `void setNum(int x, int y, int num)` | - Sets the inputted num of the Box at the inputted xy-coordinate.  - Removes the num from avalNum from all Box classes within the current Block.  - setNum is used to generate the board. |
-| `void setUserNum(int index, int num)` | - If the userNum of Box at the inputted index does not contain the inputted num, then the num is added to the userNum. - If the userNum of Box at the inputted index contains the inputted num, then the num is removed from the userNum. |
-| `void  setUserNum(int x, int y, int num)` | - If the userNum of Box at the inputted xy-coordinate does not contain the inputted num, then the num is added to the userNum. - If the userNum of Box at the inputted xy-coordinate contains the inputted num, then the num is removed from the userNum. |
+| `void setNum(int index, int num)` | Sets the inputted num of the Box at the inputted index. Removes the num from avalNum from all Box classes within the current Block. setNum is used to generate the board. |
+| `void setNum(int x, int y, int num)` | Sets the inputted num of the Box at the inputted xy-coordinate. Removes the num from avalNum from all Box classes within the current Block. setNum is used to generate the board. |
+| `void setUserNum(int index, int num)` | If the userNum of Box at the inputted index does not contain the inputted num, then the num is added to the userNum. If the userNum of Box at the inputted index contains the inputted num, then the num is removed from the userNum. |
+| `void setUserNum(int x, int y, int num)` | If the userNum of Box at the inputted xy-coordinate does not contain the inputted num, then the num is added to the userNum. If the userNum of Box at the inputted xy-coordinate contains the inputted num, then the num is removed from the userNum. |
 | `int getNum(int index)` | Returns the num within the Box at the inputted index. |
 | `int getNum(int x, int y)` | Returns the num within the Box at the inputted xy-coordinate. |
-| `ArrayList<Integer> getAvalNum(int index)` | Returns the avalNum from the Box at the inputted index. |
-| `ArrayList<Integer> getAvalNum(int x, int y)` | Returns the avalNum from the Box at the inputted xy-coordinate. |
-| `ArrayList<Integer> getUserNum(int index)` | Returns the userNum from the Box at the inputted index. |
-| `ArrayList<Integer> getUserNum(int x, int y)` | Returns the userNum from the Box at the inputted xy-coordinate. |
-| `void  remAvalNum(int index, int num)` | Removes the inputted num from the avalNum of the Box at the inputted index. |
-| `void  remAvalNum(int x, int y, int num)` | Removes the inputted num from the avalNum of the Box at the inputted xy-coordinate. |
-
-
-
-
+| `ArrayList<Integer>getAvalNum(int index)` | Returns the avalNum from the Box at the inputted index. |
+| `ArrayList<Integer>getAvalNum(int x, int y)` | Returns the avalNum from the Box at the inputted xy-coordinate. |
+| `ArrayList<Integer>getUserNum(int index)` | Returns the userNum from the Box at the inputted index. |
+| `ArrayList<Integer>getUserNum(int x, int y)` | Returns the userNum from the Box at the inputted xy-coordinate. |
+| `void remAvalNum(int index, int num)` | Removes the inputted num from the avalNum of the Box at the inputted index. |
+| `void remAvalNum(int x, int y, int num)` | Removes the inputted num from the avalNum of the Box at the inputted xy-coordinate. |
 
 
 
