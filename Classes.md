@@ -19,12 +19,12 @@
 
 
 | Function | Function Definition |
-|:--------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:---------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Box(int num)` | Initializes a class Box containing a num (set by the inputted integer selected by the generator), an empty userNum, and an empty avalNum. This Box class will not be modified by the user. |
 | `Box()` | Initializes a class Box containing a non-set num, an empty userNum, and an avalNum containing integers from 1 to 9. This Box class will be modified by the user. |
 | `void setNum(int num)` | Sets the Box’s num with the inputted integer. |
 | `setUserNum(int num)` | Adds the inputted integer to userNum if userNum does not contain the number. Removes the inputted number from userNum if the userNum does contain the inputted integer. |
 | `int getNum()` | Returns the Box’s current num. |
-| `ArrayListInteger>getAvalNum()` | Returns the Box’s current avalNum. |
-| `ArrayList<Integer>getUserNum()` | Returns the Box’s current userNum. |
+| `ArrayListInteger> getAvalNum()` | Returns the Box’s current avalNum. |
+| `ArrayList<Integer> getUserNum()` | Returns the Box’s current userNum. |
 | `void remAvalNum(int num)` | Removes the inputted num from avalNum. |
