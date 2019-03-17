@@ -1,6 +1,12 @@
 #Sudoku Classes and Functions
 
 
+Directory
+- `src` contains all the Java source code
+	- `image` contains the PNG versions of the original button images.
+	- `image.num` contains the PNG versions of the original number images.
+	- `SudokuGame` contains all the classes of the game. 
+
 
 ## Box Class
 
