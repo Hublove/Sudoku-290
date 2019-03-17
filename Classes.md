@@ -19,3 +19,14 @@
 | ArrayList<Integer> avalNum | Defines the numbers still available for the generator to use when constructing the board.|
 
 
+|  Input  | Button |
+|:-------:|--------|
+| Input 1 |    1   |
+| Input 2 |    2   |
+| Input 3 |    3   |
+| Input 4 |    4   |
+| Input 5 |    5   |
+| Input 6 |    6   |
+| Input 7 |    7   |
+| Input 8 |    8   |
+| Input 9 |    9   |
