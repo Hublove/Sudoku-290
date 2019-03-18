@@ -71,11 +71,10 @@
 
 
 ### Board's Variables
-| Variable       | Variable Definition              |
-|----------------|----------------------------------|
-| Block blocks[] | An empty array of Block classes. |
 
-
+| Variable | Variable Definition |
+|------------------|----------------------------------|
+| `Block blocks[]` | An empty array of Block classes. |
 ### Board's Functions
 
 
