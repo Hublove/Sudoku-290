@@ -20,10 +20,15 @@ import javafx.stage.Stage;
 import javafx.animation.AnimationTimer;
 
 /**
- * view part of the Sudoku game
+ * View class implements an appearance of the game Sudoku,
+ * displaying start screen, instruction screen and game screen
+ * with several buttons.
+ * 
+ * @author Seungmin Baek, 
  */
 public class View extends Application {
-	
+
+	// Image files of the game
 	static Image startImage = new Image("/image/startscreen.png"),
 			startBImage = new Image("/image/playB.png"),
 			helpBImage = new Image("/image/helpB.png"),
@@ -32,50 +37,56 @@ public class View extends Application {
 			numBackImage = new Image("/image/numBack.png"),
 			numBackSelImage = new Image("/image/numBackSel.png"),
 			gearImage = new Image("/image/gear.png");
-	
+
 	ImageView numView[][][][],
 	//[x coordinate for box][y coordinate for box][x coordinate for temp num][y coordinate for temp num] 
 	//the last two count start at 1. 0 for the big view of that box
-		numBackView[][], gearView;
+	numBackView[][], gearView;
 	Group numViewGroup[][];
 	Text timeText;
-	
+
 	SudokuModel model;
 	Controller controller;
 	ButtonPanel buttonPanel;
-	
+
 	long timeCounter;
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
+	/**
+	 * When the code is run, Stage primaryStage is called
+	 * for the unser interface.
+	 * @param primaryStage
+	 * @exception Exception 
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		initUI(primaryStage);
 	}
-	
+
 
 	/**
-	 * Constructs the Instruction Scene with image of
-	 *  Sudoku rules and start button.
+	 * Constructs the Game introduction Scene with image of
+	 * Sudoku rules and start button.
+	 * @param stage 
 	 * @return Scene
 	 */
 	public Scene initGameStartScene(Stage stage) {
 
 		Group view = new Group();
 
+		// Set the background image file
 		ImageView gameStartView = new ImageView(startImage);
 		gameStartView.setFitHeight(640);
 		gameStartView.setFitWidth(810);
 		gameStartView.relocate(0, 0);
 		Button buttonGameStart = new Button(null, new ImageView(startBImage));
 		Button buttonHelp = new Button(null, new ImageView(helpBImage));
-
-		// Instruction Screen
 		view.getChildren().add(gameStartView);
 
-		//Start Button
+		// Create Start button
 		view.getChildren().add(buttonGameStart);
 		buttonGameStart.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -87,6 +98,7 @@ public class View extends Application {
 		buttonGameStart.setTranslateX(150);
 		buttonGameStart.setTranslateY(400);
 
+		// Create Help button
 		view.getChildren().add(buttonHelp);
 		buttonHelp.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -98,32 +110,43 @@ public class View extends Application {
 		buttonHelp.setTranslateX(450);
 		buttonHelp.setTranslateY(400);
 
+		// When Start button is clicked, the screen will be switched to the game screen 
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initGameScene());
 			}
 		});
 
+		// When Help button is clicked, the screen will be switched to the instruction screen
 		buttonHelp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initInstructionScene(stage));
 			}
 		});
 
+		// Create the scene with the Introduction Components
 		Scene scene = new Scene(view, 810, 640);
 		return scene;
 
 	}
 
+	/**
+	 * Constructs the Instruction Scene with image of
+	 * Sudoku rules and start button.
+	 * @param stage 
+	 * @return Scene
+	 */
 	public Scene initInstructionScene(Stage stage) {
 
 		Group view = new Group();
 
+		// Set the background image file
 		ImageView gameView = new ImageView(instructionImage);
 		Button buttonGameStart = new Button(null, new ImageView(startBImage));
-		
+
 		view.getChildren().add(gameView);
-		
+
+		// Create Game start button
 		view.getChildren().add(buttonGameStart);
 		buttonGameStart.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -134,7 +157,9 @@ public class View extends Application {
 				+ "-fx-text-fill: #828282;");
 		buttonGameStart.setTranslateX(500);
 		buttonGameStart.setTranslateY(450);
-		
+
+		// When game start button is clicked,
+		// the screen will be switched to the game screen
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initGameScene());
@@ -142,12 +167,12 @@ public class View extends Application {
 			}
 		});
 
-		//Create the scene with the Instruction Components
+		// Create the scene with the Instruction Components
 		Scene scene = new Scene(view, 810, 640);
 		return scene;
 
 	}
-	
+
 	/**
 	 * the constructor of the game scene
 	 * (include show some numbers as sample for now)
@@ -164,40 +189,40 @@ public class View extends Application {
 		boardBackView.setFitWidth(810);
 		boardBackView.relocate(0, 0);
 		view.getChildren().add(boardBackView);
-		
+
 		//image of the black lines to show the sudoku board
 		Rectangle boardUp = new Rectangle(540, 2);
 		boardUp.relocate(50, 50);
 		view.getChildren().add(boardUp);
-		
+
 		Rectangle boardDown = new Rectangle(540, 2);
 		boardDown.relocate(50, 588);
 		view.getChildren().add(boardDown);
-		
+
 		Rectangle boardLeft = new Rectangle(2, 540);
 		boardLeft.relocate(50, 50);
 		view.getChildren().add(boardLeft);
-		
+
 		Rectangle boardRight = new Rectangle(2, 540);
 		boardRight.relocate(588, 50);
 		view.getChildren().add(boardRight);
-		
+
 		Rectangle inBoardH1 = new Rectangle(540, 2);
 		inBoardH1.relocate(50, 229);
 		view.getChildren().add(inBoardH1);
-		
+
 		Rectangle inBoardH2 = new Rectangle(540, 2);
 		inBoardH2.relocate(50, 409);
 		view.getChildren().add(inBoardH2);
-		
+
 		Rectangle inBoardV1 = new Rectangle(2, 540);
 		inBoardV1.relocate(229, 50);
 		view.getChildren().add(inBoardV1);
-		
+
 		Rectangle inBoardV2 = new Rectangle(2, 540);
 		inBoardV2.relocate(409, 50);
 		view.getChildren().add(inBoardV2);
-		
+
 		model = new SudokuModel();
 		model.genNewGame();
 		model.diGenGame("easy");
@@ -230,10 +255,10 @@ public class View extends Application {
 				}
 			}
 		}
-		
+
 		buttonPanel = new ButtonPanel(view);
-		
-		
+
+
 		//set up timer related view
 		gearView = new ImageView(gearImage);
 		gearView.setFitHeight(200);
@@ -246,7 +271,7 @@ public class View extends Application {
 		initController(scene);
 		return scene;
 	}
-	
+
 	/**
 	 * update the ImageViews of the Box at the given
 	 * coordinate
@@ -273,79 +298,87 @@ public class View extends Application {
 			numView[x][y][0][0].setImage(null);
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @param scene
+	 */
 	void initController(Scene scene) {
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
-			
+
 			public void handle(KeyEvent event) {
 				controller.keyPressed(event);
 			}
 		});
-		
+
 		scene.setOnKeyReleased(new EventHandler<KeyEvent>(){
-					
+
 			public void handle(KeyEvent event) {
 				controller.keyReleased(event);
 			}
 		});
-		
+
 		scene.setOnMouseMoved(new EventHandler<MouseEvent>() {
-			
+
 			public void handle(MouseEvent e) {
 				controller.mouseMoved(e);
 			}
 		});
-		
+
 		scene.setOnMouseDragged(new EventHandler<MouseEvent>() {
-			
+
 			public void handle(MouseEvent e) {
 				controller.mouseDragged(e);
 			}
 		});
-		
+
 		scene.setOnMousePressed(new EventHandler<MouseEvent>() {
-			
+
 			public void handle(MouseEvent e) {
 				controller.mousePressed(e);
 			}
 		});
 
 		scene.setOnMouseReleased(new EventHandler<MouseEvent>() {
-			
+
 			public void handle(MouseEvent e) {
 				controller.mouseReleased(e);
 			}
 		});
 	}
-	
+
+	/**
+	 * 
+	 * @param stage
+	 */
 	void initUI(Stage stage) {
 		Scene scene = initGameStartScene(stage);//changed for test
 		controller = new StartController(this);
 		initController(scene);
-		
-		
+
+
 		stage.setTitle("Sudoku game");
 		stage.setScene(scene);
 		stage.show();
-		
+
 		timeCounter = 0;
 		AnimationTimer timer = new AnimationTimer() {
-	        @Override
-	        public void handle(long now) {
-	        	controller.updateTimer();
-	        }
-	    };
-	    
-        Timer FPStimer = new Timer();
-        TimerTask Task1 = new TimerTask() {
-            @Override
-            public void run() {
-            	timeCounter ++;
-            }
-        };
-        FPStimer.scheduleAtFixedRate(Task1, 0l, 1000);
-	    
-	    timer.start();
+			@Override
+			public void handle(long now) {
+				controller.updateTimer();
+			}
+		};
+
+		Timer FPStimer = new Timer();
+		TimerTask Task1 = new TimerTask() {
+			@Override
+			public void run() {
+				timeCounter ++;
+			}
+		};
+		FPStimer.scheduleAtFixedRate(Task1, 0l, 1000);
+
+		timer.start();
 	}
 
 }
