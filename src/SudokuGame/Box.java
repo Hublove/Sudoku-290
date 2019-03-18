@@ -6,15 +6,17 @@ import javafx.scene.image.Image;
 
 
 /**
- *The class that will contain information about a single box
+ *The class that will contain information about a single Box.
  */
 public class Box {
+	//Blue number images
 	static Image nums[] = {new Image("/image/num/0d.png"), new Image("/image/num/1d.png"),
 			new Image("/image/num/2d.png"), new Image("/image/num/3d.png"),
 			new Image("/image/num/4d.png"), new Image("/image/num/5d.png"),
 			new Image("/image/num/6d.png"), new Image("/image/num/7d.png"),
 			new Image("/image/num/8d.png"), new Image("/image/num/9d.png"),};//for user input number
 	
+	//Yellow number images
 	static Image cnums[] = {new Image("/image/num/0c.png"), new Image("/image/num/1c.png"),
 			new Image("/image/num/2c.png"), new Image("/image/num/3c.png"),
 			new Image("/image/num/4c.png"), new Image("/image/num/5c.png"),
@@ -23,11 +25,11 @@ public class Box {
 	
 	int num;
 	ArrayList<Integer> userNum, //for user input
-		avalNum;//for system generate new game
+		avalNum;//to generate new game
 	
 	/**
-	 * Initialize Box that have the given number
-	 * @param num should be system set number
+	 * Initializes Box with the given num.
+	 * @param num number set by generator
 	 */
 	public Box(int num) {
 		this.num = num;
@@ -36,8 +38,7 @@ public class Box {
 	}
 	
 	/**
-	 * Initialize Box that does not have a 
-	 * system set number
+	 * Initializes Box. 
 	 */
 	public Box() {
 		this.num = -1;
@@ -49,7 +50,7 @@ public class Box {
 	}
 	
 	/**
-	 * remove the given num from avalNum
+	 * Removes the given num from avalNum. 
 	 * @param num that want to remove
 	 */
 	public void remAvalNum(int num) {
@@ -57,7 +58,7 @@ public class Box {
 	}
 	
 	/**
-	 * return avalNum
+	 * Returns avalNum. 
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getAvalNum() {
@@ -65,7 +66,7 @@ public class Box {
 	}
 	
 	/**
-	 * return num
+	 * Returns Box's num.
 	 * @return int
 	 */
 	public int getNum() {
@@ -73,7 +74,7 @@ public class Box {
 	}
 	
 	/**
-	 * set num to the new value
+	 * Sets num to the given num.
 	 * @param num the new value of num
 	 */
 	public void setNum(int num) {
@@ -81,8 +82,8 @@ public class Box {
 	}
 	
 	/**
-	 * add the num to userNum if not in it 
-	 * or remove if not in it
+	 * Adds the num to userNum if num is not in userNum
+	 * and removes num from userNum if num is in userNum.
 	 * @param num want to change
 	 */
 	public void setUserNum(int num) {
@@ -94,7 +95,7 @@ public class Box {
 	}
 	
 	/**
-	 * return userNum
+	 * Returns userNum. 
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getUserNum(){
