@@ -272,6 +272,7 @@ public class View extends Application {
 		return scene;
 	}
 
+	
 	/**
 	 * update the ImageViews of the Box at the given
 	 * coordinate
