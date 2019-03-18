@@ -127,18 +127,17 @@
 
 ### View's Variables
 | Variable | Variable Definition |
-|----------------------------|----------------------------------------------------------------------------------------------------|
-| ImageView numView[][][][] |  |
-| ImageView numView[][] |  |
-| ImageView gearView |  |
-| Group numBackViewGroup[][] |  |
-| SudokuModel model | Defines the Model for the game. |
-| Controller controller | Defines the Controller for the game. |
-| ButtonPanel buttonPanel | Defines the ButtonPanel for the game. |
-| Stage stage | Defines a container that can host a Scene. A Scene consists of visual elements. |
-| Text timeText | Defines the text of the timer. Indicates the time that has passed since the beginning of the game. |
-| long timeCounter | Keeps track of the time passing. |
-
+|------------------------------|----------------------------------------------------------------------------------------------------|
+| `ImageView numView[][][][]` |  |
+| `ImageView numView[][]` |  |
+| `ImageView gearView` |  |
+| `Group numBackViewGroup[][]` |  |
+| `SudokuModel model` | Defines the Model for the game. |
+| `Controller controller` | Defines the Controller for the game. |
+| `ButtonPanel buttonPanel` | Defines the ButtonPanel for the game. |
+| `Stage stage` | Defines a container that can host a Scene. A Scene consists of visual elements. |
+| `Text timeText` | Defines the text of the timer. Indicates the time that has passed since the beginning of the game. |
+| `long timeCounter` | Keeps track of the time passing. |
 
 ### View's Functions
 
@@ -149,7 +148,7 @@
 | `Scene initGameScene()` | Returns the game Scene (screen) containing the gameboard, the ButtonPanel, and the timer. |
 | `void updateUserNum`<br> `(int x, int y)` | Updates the userNum of the Box at the given xy-coordinate. |
 | `void initController`<br>`(Scene scene)` | Initializes the Controller for the inputted Scene. |
-| `void initUI(Stage stage)` | Initializes the user interface for the game with inputted Stage. |
+| `void initUI`<br>`(Stage stage)` | Initializes the user interface for the game with inputted Stage. |
 
 
 
