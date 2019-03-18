@@ -124,6 +124,18 @@
 - The View determines the visual design of the game. 
 - The View presents the SudokuModel to the user in a particular format. 
 
+| Variable | Variable Definition |
+|----------------------------|----------------------------------------------------------------------------------------------------|
+| ImageView numView[][][][] |  |
+| ImageView numView[][] |  |
+| ImageView gearView |  |
+| Group numBackViewGroup[][] |  |
+| SudokuModel model | Defines the Model for the game. |
+| Controller controller | Defines the Controller for the game. |
+| ButtonPanel buttonPanel | Defines the ButtonPanel for the game. |
+| Stage stage | Defines a container that can host a Scene. A Scene consists of visual elements. |
+| Text timeText | Defines the text of the timer. Indicates the time that has passed since the beginning of the game. |
+| long timeCounter | Keeps track of the time passing. |
 
 
 
