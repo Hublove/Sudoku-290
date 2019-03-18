@@ -175,3 +175,34 @@
 | `void keyPressed`<br>`(KeyEvent event)` | Defines the actions when a key is pressed on the keyboard. |
 | `void updateTimer()` | Updates timer. |
 
+
+
+
+## ButtonPanel Class
+- The ButtonPanel class is visually defined as the three buttons on the right-hand side of the board.
+- The three buttons are: `Restart`, `Check`, and `Help`.
+	- `Restart` allows the user to play a new game. 
+	- `Check` verifies if the user’s board matches the solution’s board.
+	- `Help` allows the user to navigate back to the instruction screen.  
+
+
+### ButtonPanel's Variables
+
+
+
+
+### ButtonPanel's Functions
+
+| Function | Function Definition |
+|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `ButtonPanel`<br>`(Group mainView)` | Initializes the ButtonPanel class with the ButtonPanel class’ variables. |
+| `void`<br>`selectButton(int index)` | Select the button at the inputted index. |
+| `void`<br>`leaveButton(int index)` | Deselect the button at the inputted index. |
+| `void`<br>`updateAnimation()` | Update the buttonPanel’s current state by modifying CHANGESPEED and MAXLENGTH depending on whether the current button is selected. |
+
+
+
+
+
+
+
