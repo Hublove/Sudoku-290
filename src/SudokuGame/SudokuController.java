@@ -1,7 +1,12 @@
 package SudokuGame;
 
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class SudokuController extends Controller{
 	long startTime = 0;
@@ -70,6 +75,21 @@ public class SudokuController extends Controller{
 					case 1:
 						boolean isWin = view.model.isGameSolved();
 						System.out.println(isWin);
+						Stage stage= new Stage();
+						Group group = new Group();
+						Scene scene = new Scene(group, 300, 150);
+						Text timeText;
+						if (isWin) {
+							stage.setTitle("Solved!!!");
+							timeText = new Text(50, 70, "Solved!!");
+						}else {
+							stage.setTitle("Not Solved");
+							timeText = new Text(50, 70, "Not Solved");
+						}
+						timeText.setFont(new Font(40));
+						group.getChildren().add(timeText);
+						stage.setScene(scene);
+						stage.show();
 						break;
 					case 2:
 						view.stage.setScene(view.initInstructionScene(view.stage));
