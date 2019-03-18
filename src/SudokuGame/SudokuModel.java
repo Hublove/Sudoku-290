@@ -186,9 +186,7 @@ public class SudokuModel {
     /**
      * Checks if a block is solved
      *
-     * @param block Block to check
-     *
-     * @return  If the block is solved
+     * @param block   Block to check
      */
     public boolean isBlockSolved(Block block) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -197,11 +195,22 @@ public class SudokuModel {
         }
 
         for (int i = 0; i < 9; i++) {
-            for (int num: numbers) {
-                if (block.getNum(i) == num) {
-                    numbers.remove(num);
-                }
-            }
+    		if(block.getUserNum(i).size() != 1 && block.getNum(i) < 0) {
+    			return false;
+    		}
+    		if (block.getNum(i) < 0) {
+	    		if (numbers.indexOf(block.getUserNum(i).get(0)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove(block.getUserNum(i).get(0));
+	    		}
+    		}else {
+    			if (numbers.indexOf(block.getNum(i)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove((Integer)block.getNum(i));
+	    		}
+    		}
         }
 
         if (!numbers.isEmpty()) {
@@ -216,8 +225,6 @@ public class SudokuModel {
      *
      * @param board   Board to work on
      * @param rowNum   Which row to check
-     *
-     * @return  If the row is solved
      */
     public boolean isRowSolved(Board board, int rowNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -226,11 +233,22 @@ public class SudokuModel {
         }
 
         for (int i = 0; i < 9; i++) {
-            for (int num: numbers) {
-                if (board.getNum(i, rowNum) == num) {
-                    numbers.remove(num);
-                }
-            }
+    		if(board.getUserNum(i, rowNum).size() != 1 && board.getNum(i, rowNum) < 0) {
+    			return false;
+    		}
+    		if (board.getNum(i, rowNum) < 0) {
+	    		if (numbers.indexOf(board.getUserNum(i, rowNum).get(0)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove(board.getUserNum(i, rowNum).get(0));
+	    		}
+    		}else {
+    			if (numbers.indexOf(board.getNum(i, rowNum)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove((Integer)board.getNum(i, rowNum));
+	    		}
+    		}
         }
 
         if (!numbers.isEmpty()) {
@@ -244,8 +262,6 @@ public class SudokuModel {
      *
      * @param board   Board to work on
      * @param colNum   Which column to check
-     *
-     * @return  If the column is solved
      */
     public boolean isColumnSolved(Board board, int colNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -254,11 +270,22 @@ public class SudokuModel {
         }
 
         for (int i = 0; i < 9; i++) {
-            for (int num: numbers) {
-                if (board.getNum(colNum, i) == num) {
-                    numbers.remove(num);
-                }
-            }
+    		if(board.getUserNum(colNum, i).size() != 1 && board.getNum(colNum, i) < 0) {
+    			return false;
+    		}
+    		if (board.getNum(colNum, i) < 0) {
+	    		if (numbers.indexOf(board.getUserNum(colNum, i).get(0)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove(board.getUserNum(colNum, i).get(0));
+	    		}
+    		}else {
+    			if (numbers.indexOf(board.getNum(colNum, i)) < 0) {
+	    			return false;
+	    		}else {
+	    			numbers.remove((Integer)board.getNum(colNum, i));
+	    		}
+    		}
         }
 
         if (!numbers.isEmpty()) {
