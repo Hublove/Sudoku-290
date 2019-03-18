@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 
 /**
- *The class that will contain information about the
- *whole Sudoku game board
+ * The class that will contain information about the whole Sudoku game board
  */
 public class Board {
 	Block blocks[];
 
 	/**
-	 * initialize Board with 9 empty block
+	 * Initialize Board with 9 empty Block classes.
 	 */
 	public Board() {
 		this.blocks = new Block[9];
@@ -21,24 +20,24 @@ public class Board {
 	}
 
 	/**
-	 * get the num of the Box at given coordinate
+	 * Returns the num of the Box at the given xy-coordinate.
 	 *
-	 * @param x x coordinate
-	 * @param y y coordinate
-	 * @return the num at that Box
+	 * @param x x-coordinate
+	 * @param y y-coordinate
+	 * @return the num of the Box
 	 */
 	public int getNum(int x, int y) {
 		return this.blocks[(x / 3) + (y / 3) * 3].getNum((x % 3) + (y % 3) * 3);
 	}
 
 	/**
-	 * set the num of the Box at given coordinate
-	 * and remove that num from avalNum at the corresponding
-	 * row and column
+	 * Sets the num of the Box at the given xy-coordinate
+	 * and removes that num from avalNum at the corresponding
+	 * row and column.
 	 *
-	 * @param x   x coordinate
-	 * @param y   y coordinate
-	 * @param num new num of that Box
+	 * @param x   x-coordinate
+	 * @param y   y-coordinate
+	 * @param num the new num value of the Box
 	 */
 	public void setNum(int x, int y, int num) {
 		this.blocks[(x / 3) + (y / 3) * 3].setNum((x % 3) + (y % 3) * 3, num);
@@ -49,21 +48,21 @@ public class Board {
 	}
 
 	/**
-	 * remove the given num at the box at given coordinate
+	 * Removes the given num from the Box at the given xy-coordinate. 
 	 *
-	 * @param x   x coordinate
-	 * @param y   y coordinate
-	 * @param num num want to remove
+	 * @param x  x-coordinate
+	 * @param y  y-coordinate
+	 * @param num the removed num value from the Box
 	 */
 	public void remAvalNum(int x, int y, int num) {
 		this.blocks[(x / 3) + (y / 3) * 3].remAvalNum((x % 3) + (y % 3) * 3, num);
 	}
 
 	/**
-	 * return the avalNum at the box at given coordinate
+	 * Returns the avalNum of the Box at given xy-coordinate.
 	 *
-	 * @param x x coordinate
-	 * @param y y coordinate
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getAvalNum(int x, int y) {
@@ -71,27 +70,32 @@ public class Board {
 	}
 
 	/**
-	 * set userNum with the given num at the box at given coordinate
+	 * Sets Box's num at the xy-coordinate based on Box's setUserNum description. 
 	 *
-	 * @param x   x coordinate
-	 * @param y   y coordinate
-	 * @param num the num want to change
+	 * @param x  x-coordinate
+	 * @param y  y-coordinate
+	 * @param num the new num value for the Box
 	 */
 	public void setUserNum(int x, int y, int num) {
 		this.blocks[(x / 3) + (y / 3) * 3].setUserNum((x % 3) + (y % 3) * 3, num);
 	}
 
 	/**
-	 * return userNum at the box at given coordinate
-	 *
-	 * @param x x coordinate
-	 * @param y y coordinate
+	 * Returns the userNum of the Box at the given xy-coordinate.
+	 * 
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getUserNum(int x, int y) {
 		return this.blocks[(x / 3) + (y / 3) * 3].getUserNum((x % 3) + (y % 3) * 3);
 	}
 
+	/**
+	 * Returns the Blocks of the Board.
+	 * @return Block[]
+	 */
+	
 	public Block[] getBlocks() {
 		return this.blocks;
 	}

@@ -7,14 +7,21 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
- * contain information about button panel
+ * Contains the information about the Button Panel. 
  */
 public class ButtonPanel {
+	
+	//BUTTONNUM - number of buttons
+	//MAXLENGTH - how far the button goes out
+	//CHANGESPEED - how fast the button moves
 	static final int BUTTONNUM = 3, MAXLENGTH = 70, CHANGESPEED = 10;
+	
+	//Images for buttons
 	static final Image buttonBack = new Image("/image/buttonBack.png"), 
 			textBlackImage[] = {new Image("/image/restartB.png"),
 					new Image("/image/checkB.png"),
 					new Image("/image/howB.png")};
+	
 	
 	double animationCounter[];
 	ImageView buttonView[], textView[];
@@ -23,7 +30,7 @@ public class ButtonPanel {
 	Group views;
 	
 	/**
-	 * create a new ButtonPanal
+	 * Initializes a ButtonPanel class.
 	 * @param mainView the Group will contain all buttons
 	 */
 	public ButtonPanel(Group mainView) {
@@ -49,18 +56,15 @@ public class ButtonPanel {
 	}
 	
 	/**
-	 * select the button at given index
+	 * Select the button at the given index. 
 	 * @param index the index of the button
 	 */
 	public void selectButton(int index) {
-//		for (int i = 0; i < BUTTONNUM; i++) {
-//			leaveButton(i);
-//		}
 		select[index] = true;
 	}
 	
 	/**
-	 * set select of the button to false at given index
+	 * Set button's select to false at the given index.
 	 * @param index the index of the button
 	 */
 	public void leaveButton(int index) {
@@ -68,7 +72,7 @@ public class ButtonPanel {
 	}
 	
 	/**
-	 * Update animation
+	 * Updates animation of ButtonPanel. 
 	 */
 	public void updateAnimation() {
 		for (int i = 0; i < BUTTONNUM; i ++) {

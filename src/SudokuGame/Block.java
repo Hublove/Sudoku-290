@@ -2,14 +2,14 @@ package SudokuGame;
 
 import java.util.ArrayList;
 /**
- *The class that will contain information about a single block
+ *The class that will contain information about a single Block.
  */
 public class Block {
 
 	Box boxs[];
 	
 	/**
-	 *create a block that have 9 empty box
+	 *Initializes Block with have 9 empty Box classes.
 	 */
 	public Block() {
 		this.boxs = new Box[9];
@@ -19,28 +19,30 @@ public class Block {
 	}
 	
 	/**
-	 * return num of the Box at the given index count from left to right
+	 * Returns the num of the Box at the given index. 
+	 * (count from left to right)
 	 * up to down
 	 * @param index index of the box
-	 * @return int num of that box
+	 * @return int the num value of the Box
 	 */
 	public int getNum(int index) {
 		return this.boxs[index].getNum();
 	}
 	
 	/**
-	 * return num of the Box at the given coordinate
-	 * @param x x coordinate
-	 * @param y y coordinate
-	 * @return int num of that box
+	 * Returns the num of the Box at the given xy-coordinate.
+	 * @param x x-coordinate
+	 * @param y y-coordinate
+	 * @return int the num value of the Box
 	 */
 	public int getNum(int x, int y) {
 		return getNum(x + y * 3);
 	}
 	
 	/**
-	 * set num of the Box at the given index count from left to right
-	 * up to down and remove num from avalNum from all box at this block
+	 * Sets the num of the Box at the given index 
+	 * (count from left to right and up to down) 
+	 * and removes num from avalNum from all Boxes at this Block.
 	 * @param index index of the box
 	 * @param num the new num of that box
 	 */
@@ -52,42 +54,41 @@ public class Block {
 	}
 	
 	/**
-	 * set num of the Box at the given coordinate
-	 * and remove num from avalNum from all box at this block
-	 * @param x x coordinate
-	 * @param y y coordinate
-	 * @param num the new num of that box
+	 * Sets num of the Box at the given xy-coordinate. 
+	 * @param x x-coordinate
+	 * @param y y-coordinate
+	 * @param num the new num value of the Box
 	 */
 	public void setNum(int x, int y, int num) {
 		setNum(x + y * 3, num);
 	}
 	
 	/**
-	 * remove the num from avalNum from the Box at
-	 * given index count from left to right
-	 * up to down
+	 * Removes the num from avalNum from the Box at
+	 * the given index.
+	 * (count from left to right and up to down)
 	 * @param index index of the box
-	 * @param num number want to remove
+	 * @param num the num value to be removed
 	 */
 	public void remAvalNum(int index, int num) {
 		this.boxs[index].remAvalNum(num);
 	}
 	
 	/**
-	 * remove the num from avalNum from the Box at
-	 * given coordinate
-	 * @param x x coordinate
-	 * @param y y coordinate
-	 * @param num number want to remove
+	 * Removes the num from avalNum from the Box at
+	 * the given xy-coordinate.
+	 * @param x x-coordinate
+	 * @param y y-coordinate
+	 * @param num the num value to be removed
 	 */
 	public void remAvalNum(int x, int y, int num) {
 		remAvalNum(x + y * 3, num);
 	}
 	
 	/**
-	 * return the avalNum from the Box at
-	 * given index count from left to right
-	 * up to down
+	 * Returns the avalNum from the Box at
+	 * the given index.
+	 * (count from left to right and up to down)
 	 * @param index index of the box
 	 * @return ArrayList<Integer>
 	 */
@@ -96,10 +97,10 @@ public class Block {
 	}
 	
 	/**
-	 * return the avalNum from the Box at
-	 * given coordinate
-	 * @param x x coordinate
-	 * @param y y coordinate
+	 * Returns the avalNum from the Box at
+	 * the given xy-coordinate. 
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getAvalNum(int x, int y) {
@@ -107,32 +108,32 @@ public class Block {
 	}
 	
 	/**
-	 * set userNum with the given num at the Box at given
-	 * index count from left to right
-	 * up to down
+	 * Sets userNum with the given num for the Box 
+	 * at the given index. 
+	 * (count from left to right up to down)
 	 * @param index index of the box
-	 * @param num num want to change
+	 * @param num the new num value for Box
 	 */
 	public void setUserNum(int index, int num) {
 		this.boxs[index].setUserNum(num);
 	}
 	
 	/**
-	 * set userNum with the given num at the Box at given
-	 * index coordinate
-	 * @param x x coordinate
-	 * @param y y coordinate
-	 * @param num num want to change
+	 * Sets the userNum with the given num for the Box
+	 * at the given index.  
+	 * @param x x-coordinate
+	 * @param y y-coordinate
+	 * @param num the new num value for Box
 	 */
 	public void setUserNum(int x, int y, int num) {
 		setUserNum(x + y * 3, num);
 	}
 	
 	/**
-	 * return the userNum from the Box at
-	 * given index count from left to right
-	 * up to down
-	 * @param index index of the box
+	 * Returns the userNum from the Box at
+	 * the given index 
+	 * (count from left to right and up to down)
+	 * @param index index of the Box
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getUserNum(int index){
@@ -140,10 +141,10 @@ public class Block {
 	}
 	
 	/**
-	 * return the userNum from the Box at
-	 * given coordinate
-	 * @param x x coordinate
-	 * @param y y coordinate
+	 * Returns the userNum from the Box at
+	 * the given xy-coordinate.
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 * @return ArrayList<Integer>
 	 */
 	public ArrayList<Integer> getUserNum(int x, int y){

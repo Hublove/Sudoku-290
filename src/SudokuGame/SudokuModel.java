@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * The SudokuModel class represents the data in the game
+ * The SudokuModel class represents the data in the game. 
  * @author  Sebastian Stanik
  * @version March 17, 2019
  */
@@ -16,6 +16,13 @@ public class SudokuModel {
     boolean isEditing;
     int editIndex[];
 
+    
+    
+    /**
+     * Initializes a new SudokuModel class.  
+     *
+     * @param diff The game's level of difficulty (easy, medium, or hard). 
+     */
     public SudokuModel() {
         board = new Board();
 		isEditing = false;
@@ -23,9 +30,9 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a column on the board is solved
+     * Determines the difficulty of the game by the given diff. 
      *
-     * @param diff What difficulty the game will be set to (easy, medium, or hard)
+     * @param diff The game's level of difficulty (easy, medium, or hard). 
      */
     public void diGenGame(String diff) {
         Random rand = new Random();
@@ -55,11 +62,10 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a number already exists in the row
+     * Returns true if the given number is in the given row. 
      *
      * @param row The row that is being checked
      * @param num The number that is being checked
-     *
      * @return  If the number is in the row
      */
     public boolean isInRow(int[] row, int num) {
@@ -72,7 +78,7 @@ public class SudokuModel {
 
 
     /**
-     * Generates a new Sudoku board
+     * Generates a new Sudoku board. 
      */
     public void genNewGame() {
         Random rand = new Random();
@@ -111,11 +117,11 @@ public class SudokuModel {
 
 
     /**
-     * Checks if a column on the board is solved
+     * Copies the given row at the given rowNum to the board. 
      *
-     * @param board The board which will be written to
-     * @param row   The row that will be written to the board
-     * @param rowNum The index of the row to set
+     * @param board The Board
+     * @param row   The number of the row 
+     * @param rowNum The index of the row
      */
     public void setRow(Board board, int[] row, int rowNum) {
         for (int i = 0; i < 9; i++) {
@@ -124,10 +130,10 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a column on the board is solved
+     * Shifts the given row by a given amount. 
      *
-     * @param row   The row to shift
-     * @param amount   How many digits to shift the column
+     * @param row     The number of the row 
+     * @param amount  The number of shifts
      */
     public void shiftRow(int[] row, int amount) {
 
@@ -156,9 +162,9 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if the game is solved according to Sudoku rules
+     * Returns true if the game is solved based on Sudoku's rules.
      *
-     * @return  If the game is solved
+     * @return  true if the game is solved
      */
     public boolean isGameSolved() {
         Block[] blocks = board.getBlocks();
@@ -184,9 +190,10 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a block is solved
+     * Returns true if the given block is solved based on the Sudoku rules.
      *
-     * @param block   Block to check
+     * @param   block  current Block
+     * @return  true if the block is solved
      */
     public boolean isBlockSolved(Block block) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -221,10 +228,12 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a row on the board is solved
+     * Returns true if the given row on the given board is solved 
+     * based on Sudoku rules. 
      *
-     * @param board   Board to work on
-     * @param rowNum   Which row to check
+     * @param board    current Board
+     * @param rowNum   row number
+     * @return  true if the row is solved
      */
     public boolean isRowSolved(Board board, int rowNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -258,10 +267,12 @@ public class SudokuModel {
     }
 
     /**
-     * Checks if a column on the board is solved
+     * Returns true if the given column on the given board is solved 
+     * based on Sudoku rules.
      *
-     * @param board   Board to work on
-     * @param colNum   Which column to check
+     * @param board    current Board
+     * @param colNum   column number
+     * @return  If the column is solved
      */
     public boolean isColumnSolved(Board board, int colNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
