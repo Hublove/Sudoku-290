@@ -6,6 +6,9 @@
 	- `image` contains the PNG versions of the original button images.
 	- `image.num` contains the PNG versions of the original number images.
 	- `SudokuGame` contains all the classes of the game. 
+	- `README.md` contains information on how to run and play the game. 
+	-`Classes.md` contains information on the directory, the main functions, and the main classes of the game. 
+	-`Extension.md` contains information on one method to extend the game. 
 
 
 ## Box Class
