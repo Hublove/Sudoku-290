@@ -20,10 +20,15 @@ import javafx.stage.Stage;
 import javafx.animation.AnimationTimer;
 
 /**
- * view part of the Sudoku game
+ * View class implements an appearance of the game Sudoku,
+ * displaying start screen, instruction screen and game screen
+ * with several buttons.
+ * 
+ * @author Seungmin Baek, 
  */
 public class View extends Application {
 	
+	// Image files of the game
 	static Image startImage = new Image("/image/startscreen.png"),
 			startBImage = new Image("/image/playB.png"),
 			helpBImage = new Image("/image/helpB.png"),
@@ -51,6 +56,12 @@ public class View extends Application {
 		launch(args);
 	}
 	
+	/**
+	 * When the code is run, Stage primaryStage is called
+	 * for the unser interface.
+	 * @param primaryStage
+	 * @exception Exception 
+	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		initUI(primaryStage);
@@ -59,13 +70,14 @@ public class View extends Application {
 
 	/**
 	 * Constructs the Instruction Scene with image of
-	 *  Sudoku rules and start button.
+	 * Sudoku rules and start button.
 	 * @return Scene
 	 */
 	public Scene initGameStartScene(Stage stage) {
 
 		Group view = new Group();
 
+		// Set the background image file
 		ImageView gameStartView = new ImageView(startImage);
 		gameStartView.setFitHeight(640);
 		gameStartView.setFitWidth(810);
@@ -73,10 +85,10 @@ public class View extends Application {
 		Button buttonGameStart = new Button(null, new ImageView(startBImage));
 		Button buttonHelp = new Button(null, new ImageView(helpBImage));
 
-		// Instruction Screen
+		// Game start Screen
 		view.getChildren().add(gameStartView);
 
-		//Start Button
+		// Create Start Button
 		view.getChildren().add(buttonGameStart);
 		buttonGameStart.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -88,6 +100,7 @@ public class View extends Application {
 		buttonGameStart.setTranslateX(150);
 		buttonGameStart.setTranslateY(400);
 
+		// Create Help button
 		view.getChildren().add(buttonHelp);
 		buttonHelp.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -99,32 +112,43 @@ public class View extends Application {
 		buttonHelp.setTranslateX(450);
 		buttonHelp.setTranslateY(400);
 
+		// When Start button is clicked, the screen will be switched to the game screen 
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initGameScene());
 			}
 		});
 
+		// When Help button is clicked, the screen will be switched to the instruction screen
 		buttonHelp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initInstructionScene(stage));
 			}
 		});
 
+		// Create the scene with the Introduction Components
 		Scene scene = new Scene(view, 810, 640);
 		return scene;
 
 	}
 
+	/**
+	 * Constructs the Instruction Scene with image of
+	 * Sudoku rules and start button.
+	 * @param stage 
+	 * @return Scene
+	 */
 	public Scene initInstructionScene(Stage stage) {
 
 		Group view = new Group();
 
+		// Set the background image file
 		ImageView gameView = new ImageView(instructionImage);
 		Button buttonGameStart = new Button(null, new ImageView(startBImage));
 		
 		view.getChildren().add(gameView);
 		
+		// Create Game start button
 		view.getChildren().add(buttonGameStart);
 		buttonGameStart.setStyle("-fx-border-color: transparent;"
 				+ "-fx-border-width: 0;"
@@ -136,6 +160,8 @@ public class View extends Application {
 		buttonGameStart.setTranslateX(500);
 		buttonGameStart.setTranslateY(450);
 		
+		// When game start button is clicked,
+		// the screen will be switched to the game screen
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				stage.setScene(initGameScene());
