@@ -152,8 +152,8 @@
 | `void initUI(Stage stage)`                | Initializes the user interface for the game with inputted Stage.                          |
 
 
-
-
+## SudokuController Class
+- The SudokuController class is responsible for responding to the user’s input, and interacts with the objects of the SudokuModel. 
 
 
 
