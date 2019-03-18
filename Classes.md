@@ -96,12 +96,12 @@
 
 
 ### SudokuModel's Variables
-| Variable            | Variable Definition |
-|---------------------|---------------------|
-| Block blocks[]      | A Board class.      |
-| boolean isEditing   |                     |
-| boolean editIndex[] |                     |
 
+| Variable | Variable Definition |
+|-----------------------|----------------------------------|
+| `Block blocks[]` | An empty array of Block classes. |
+| `boolean isEditing` |  |
+| `boolean editIndex[]` |  |
 
 ### SudokuModel's Functions
 
