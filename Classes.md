@@ -106,18 +106,17 @@
 ### SudokuModel's Functions
 
 | Function | Function Definition |
-|:--------------------------------------------------:|------------------------------------------------------------------------------------------------------|
+|---------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | `SudokuModel()` | Initializes SudokuModel class. |
-| `void diGenGame(String diff)` | Sets the difficulty of the Board. |
+| `void diGenGame`<br>`(String diff)` | Sets the difficulty of the Board. |
 | `void genNewGame()` | Generates a random Board based on the rules of Sudoku. |
-| `void setRow(Board board,  int[] row, int rowNum)` |  |
-| `void shiftRow (int[] row, int amount)` |  |
-| `boolean isInRow (int[] row, int num)` | Returns true if inputted num already exists in row. |
-| `boolean isBlockSolved(Block block)` | Returns true if inputted block has one instance of 1 to 9. |
-| `boolean isRowSolved (Board board, int rowNum)` | Returns true if row at inputted rowNum has one instance of 1 to 9 on the inputted board. |
-| `boolean isColumnSolved (Board board, int colNum)` | Returns true if inputted column at inputted colNum has one instance of 1 to 9 on the inputted board. |
+| `void setRow`<br>`(Board board, int[] row, int rowNum)` |  |
+| `void shiftRow`<br>`(int[] row, int amount)` |  |
+| `boolean isInRow`<br>(int[] row, int num)` | Returns true if inputted num already exists in row. |
+| `boolean isBlockSolved`<br>`(Block block)` | Returns true if inputted block has one instance of 1 to 9. |
+| `boolean isRowSolved` <br>`(Board board, int rowNum)` | Returns true if row at inputted rowNum has one instance of 1 to 9 on the inputted board. |
+| `boolean isColumnSolved`<br>`(Board board, int colNum)` | Returns true if inputted column at inputted colNum has one instance of 1 to 9 on the inputted board. |
 | `boolean isGameSolved()` | Returns true if the game is solved according to the rules of Sudoku. |
-
 
 
 ## View Class
