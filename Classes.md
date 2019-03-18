@@ -187,6 +187,16 @@
 
 
 ### ButtonPanel's Variables
+| Variable | Variable definition |
+|-----------------------------|-------------------------------------------------------------------|
+| `final int BUTTONNUM = 3` | Defines the number of buttons on the Button Panel. |
+| `int MAXLENGTH = 100` |  |
+| `int CHANGESPEED = 10` | Defines the speed of the button’s movement. |
+| `Double animationCounter[]` |  |
+| `ImageView buttonView[]` | An array of ImageViews containing the buttons’ background images. |
+| `ImageView textView[]` | An array of ImageViews containing the buttons’ text images. |
+| `boolean select[]` | An array of booleans indicating if a button has been selected. |
+| `Group views` |  |
 
 
 
