@@ -1,4 +1,4 @@
-# Sudoku Classes and Functions
+# Sudoku Directory, Classes, and Functions
 
 
 ## Directory
