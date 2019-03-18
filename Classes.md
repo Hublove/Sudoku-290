@@ -159,6 +159,7 @@
 
 
 ### SudokuController's Functions
+
 | Function | Function Definition |
 |-----------------------------------|--------------------------------------------------------------------------------------------|
 | `SudokuController(View view)` | Initializes class Sudoku Controller. Connects with the inputted view and starts the timer. |
