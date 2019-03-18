@@ -142,14 +142,16 @@
 
 ### View's Functions
 
-| Function                                  | Function Definition                                                                       |
-|-------------------------------------------|-------------------------------------------------------------------------------------------|
-| `Scene initGameStartScene(Stage stage)`   | Returns the start Scene (screen) with the inputted stage.                                 |
-| `Scene initInstructionScene(Stage stage)` | Returns the instruction Scene (screen) with the inputted stage.                           |
-| `Scene initGameScene()`                   | Returns the game Scene (screen) containing the gameboard, the ButtonPanel, and the timer. |
-| `void updateUserNum(int x, int y)`        | Updates the userNum of the Box at the given xy-coordinate.                                |
-| `void initController(Scene scene)`        | Initializes the Controller for the inputted Scene.                                        |
-| `void initUI(Stage stage)`                | Initializes the user interface for the game with inputted Stage.                          |
+| Function | Function Definition |
+|--------------------------------------------------|-------------------------------------------------------------------------------------------|
+| `Scene initGameStartScene`<br>`(Stage stage)` | Returns the start Scene (screen) with the inputted stage. |
+| `Scene initInstructionScene`<br> `(Stage stage)` | Returns the instruction Scene (screen) with the inputted stage. |
+| `Scene initGameScene()` | Returns the game Scene (screen) containing the gameboard, the ButtonPanel, and the timer. |
+| `void updateUserNum`<br> `(int x, int y)` | Updates the userNum of the Box at the given xy-coordinate. |
+| `void initController`<br>`(Scene scene)` | Initializes the Controller for the inputted Scene. |
+| `void initUI(Stage stage)` | Initializes the user interface for the game with inputted Stage. |
+
+
 
 
 ## SudokuController Class
