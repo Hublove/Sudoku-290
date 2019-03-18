@@ -161,12 +161,12 @@
 ### SudokuController's Functions
 
 | Function | Function Definition |
-|---------------------------------------|--------------------------------------------------------------------------------------------|
+|-----------------------------------------|--------------------------------------------------------------------------------------------|
 | `SudokuController(View view)` | Initializes class Sudoku Controller. Connects with the inputted view and starts the timer. |
 | `updateEdit(int x, int y)` |  |
 | `void tryUpdate(int way)` |  |
-| `void mousePressed<br>(MouseEvent e)` | Defines the actions when the mouse is pressed. |
-| void mouseMoved<br>(MouseEvent e) | Defines the actions when the mouse moves. |
-| `void keyPressed<br>(KeyEvent event)` | Defines the actions when a key is pressed on the keyboard. |
+| `void mousePressed`<br>`(MouseEvent e)` | Defines the actions when the mouse is pressed. |
+| void mouseMoved`<br>`(MouseEvent e)` | Defines the actions when the mouse moves. |
+| `void keyPressed`<br>`(KeyEvent event)` | Defines the actions when a key is pressed on the keyboard. |
 | `void updateTimer()` | Updates timer. |
 
