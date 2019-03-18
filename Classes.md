@@ -194,10 +194,10 @@
 ### ButtonPanel's Functions
 
 | Function | Function Definition |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | `ButtonPanel`<br>`(Group mainView)` | Initializes the ButtonPanel class with the ButtonPanel class’ variables. |
-| `void`<br>`selectButton(int index)` | Select the button at the inputted index. |
-| `void`<br>`leaveButton(int index)` | Deselect the button at the inputted index. |
+| `void selectButton`<br>`(int index)` | Select the button at the inputted index. |
+| `void leaveButton`<br>`(int index)` | Deselect the button at the inputted index. |
 | `void`<br>`updateAnimation()` | Update the buttonPanel’s current state by modifying CHANGESPEED and MAXLENGTH depending on whether the current button is selected. |
 
 
