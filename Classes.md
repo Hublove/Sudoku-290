@@ -155,6 +155,11 @@
 ## SudokuController Class
 - The SudokuController class is responsible for responding to the user’s input, and interacts with the objects of the SudokuModel. 
 
+### SudokuController's Variables
+
+| Variable | Variable definition |
+|----------------------|--------------------------------|
+| `long startTime = 0` | Timer will start at 0 seconds. |
 
 
 
@@ -166,7 +171,7 @@
 | `updateEdit(int x, int y)` |  |
 | `void tryUpdate(int way)` |  |
 | `void mousePressed`<br>`(MouseEvent e)` | Defines the actions when the mouse is pressed. |
-| void mouseMoved`<br>`(MouseEvent e)` | Defines the actions when the mouse moves. |
+| `void mouseMoved`<br>`(MouseEvent e)` | Defines the actions when the mouse moves. |
 | `void keyPressed`<br>`(KeyEvent event)` | Defines the actions when a key is pressed on the keyboard. |
 | `void updateTimer()` | Updates timer. |
 
