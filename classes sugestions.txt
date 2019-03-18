@@ -1,0 +1,8 @@
+boolean editIndex[] -> int editIndex[] 
+
+ImageView numView[][] -> ImageView numBackView[][]
+
+remove Group numBackViewGroup[][]
+
+void
+updateAnimation(): update animationCounter[] and relocate ImageViews
