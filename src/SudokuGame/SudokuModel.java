@@ -5,7 +5,11 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * The SudokuModel class represents the data in the game
+ * @author  Sebastian Stanik
+ * @version March 17, 2019
+ */
 public class SudokuModel {
 
     public Board board;
@@ -55,6 +59,8 @@ public class SudokuModel {
      *
      * @param row The row that is being checked
      * @param num The number that is being checked
+     *
+     * @return  If the number is in the row
      */
     public boolean isInRow(int[] row, int num) {
         for (int i = 0; i < 9; i++) {
@@ -151,6 +157,8 @@ public class SudokuModel {
 
     /**
      * Checks if the game is solved according to Sudoku rules
+     *
+     * @return  If the game is solved
      */
     public boolean isGameSolved() {
         Block[] blocks = board.getBlocks();
@@ -178,7 +186,9 @@ public class SudokuModel {
     /**
      * Checks if a block is solved
      *
-     * @param block   Block to check
+     * @param block Block to check
+     *
+     * @return  If the block is solved
      */
     public boolean isBlockSolved(Block block) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -206,6 +216,8 @@ public class SudokuModel {
      *
      * @param board   Board to work on
      * @param rowNum   Which row to check
+     *
+     * @return  If the row is solved
      */
     public boolean isRowSolved(Board board, int rowNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -232,6 +244,8 @@ public class SudokuModel {
      *
      * @param board   Board to work on
      * @param colNum   Which column to check
+     *
+     * @return  If the column is solved
      */
     public boolean isColumnSolved(Board board, int colNum) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
