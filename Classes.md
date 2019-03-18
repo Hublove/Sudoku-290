@@ -84,12 +84,11 @@
 | `Board()` | Initializes a class Block with 9 empty Box classes. |
 | `Block[] getBlocks()` | Sets the inputted num of the Box at the inputted index. Removes the num from avalNum from all Box classes within the current Block. setNum is used to generate the board. |
 | `void setNum`<br>`(int x, int y, int num)` | Sets the inputted num for the Box at the inputted xy-coordinate. Removes the num from avalNum at the corresponding row and column. |
-| `void setUserNum`<br>`(int x,int y,int num)` | If the userNum of Box at the inputted xy-coordinate does not contain the inputted num, then the num is added to the userNum. If the userNum of Box at the inputted xy-coordinate contains the inputted num, then the num is removed from the userNum. |
+| `void setUserNum`<br>`(int x, int y, int num)` | If the userNum of Box at the inputted xy-coordinate does not contain the inputted num, then the num is added to the userNum. If the userNum of Box at the inputted xy-coordinate contains the inputted num, then the num is removed from the userNum. |
 | `int getNum`<br>`(int x, int y)` | Returns the num for the Box at the inputted xy-coordinate. |
 | `ArrayList<Integer>`<br>`getUserNum(int x, int y)`  | Returns the userNum for the Box at the inputted xy-coordinate. |
 | `ArrayList<Integer>`<br>`getUserNum(int x, int y)` | Returns the avalNum for the Box at the inputted xy-coordinate. |
-| `void remAvalNum`<br>`(int x,int y,int num)` | Removes the inputted num for the Box at the inputted xy-coordinate. |
-
+| `void remAvalNum`<br>`(int x, int y, int num)` | Removes the inputted num for the Box at the inputted xy-coordinate. |
 
 
 ## SudokuModel Class
