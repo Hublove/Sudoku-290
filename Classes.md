@@ -90,6 +90,17 @@
 
 
 
+## SudokuModel Class
+- The SudokuModel class is responsible for managing the data and rules of the application. 
+- The SudokuModel is manipulated by the SudokuController, and then the SudokuModel updates the View.
+
+
+### SudokuModel's Variables
+| Variable            | Variable Definition |
+|---------------------|---------------------|
+| Block blocks[]      | A Board class.      |
+| boolean isEditing   |                     |
+| boolean editIndex[] |                     |
 
 
 
