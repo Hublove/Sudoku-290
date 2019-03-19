@@ -101,10 +101,10 @@
 ### SudokuModel's Variables
 
 | Variable | Variable Definition |
-|-----------------------|----------------------------------|
+|---------------------|----------------------------------|
 | `Block blocks[]` | An empty array of Block classes. |
 | `boolean isEditing` |  |
-| `boolean editIndex[]` |  |
+| `int editIndex[]` |  |
 
 ### SudokuModel's Functions
 
@@ -127,19 +127,18 @@
 
 
 ### View's Variables
+
 | Variable | Variable Definition |
 |------------------------------------|----------------------------------------------------------------------------------------------------|
 | `ImageView`<br>  `numView[][][][]` |  |
-| `ImageView numView[][]` |  |
+| `ImageView numBackView[][]` |  |
 | `ImageView gearView` |  |
-| `Group numBackViewGroup[][]` |  |
 | `SudokuModel model` | Defines the Model for the game. |
 | `Controller controller` | Defines the Controller for the game. |
 | `ButtonPanel buttonPanel` | Defines the ButtonPanel for the game. |
 | `Stage stage` | Defines a container that can host a Scene. A Scene consists of visual elements. |
 | `Text timeText` | Defines the text of the timer. Indicates the time that has passed since the beginning of the game. |
 | `long timeCounter` | Keeps track of the time passing. |
-
 
 ### View's Functions
 
@@ -205,12 +204,11 @@
 ### ButtonPanel's Functions
 
 | Function | Function Definition |
-|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|--------------------------------------|--------------------------------------------------------------------------|
 | `ButtonPanel`<br>`(Group mainView)` | Initializes the ButtonPanel class with the ButtonPanel class’ variables. |
 | `void selectButton`<br>`(int index)` | Select the button at the inputted index. |
 | `void leaveButton`<br>`(int index)` | Deselect the button at the inputted index. |
-| `void`<br>`updateAnimation()` | Update the buttonPanel’s current state by modifying CHANGESPEED and MAXLENGTH depending on whether the current button is selected. |
-
+| `void`<br>`updateAnimation()` | Update animationCounter[] and relocate ImageViews. |
 
 
 
