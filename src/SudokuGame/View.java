@@ -2,6 +2,11 @@ package SudokuGame;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -9,6 +14,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -44,7 +52,9 @@ public class View extends Application {
 	Controller controller;
 	ButtonPanel buttonPanel;
 	Stage stage;
-	
+	Save save= new Save();
+	Load load=new Load();
+
 	long timeCounter;
 	
 	public static void main(String[] args) {
@@ -101,7 +111,11 @@ public class View extends Application {
 
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				stage.setScene(initGameScene());
+				try {
+					stage.setScene(initGameScene());
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -138,7 +152,11 @@ public class View extends Application {
 		
 		buttonGameStart.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				stage.setScene(initGameScene());
+				try {
+					stage.setScene(initGameScene());
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 
@@ -155,7 +173,7 @@ public class View extends Application {
 	 * 		the scene that show to player when in
 	 * 		sudoku game
 	 */
-	public Scene initGameScene() {
+	public Scene initGameScene() throws FileNotFoundException {
 		controller = new SudokuController(this);
 		Group view = new Group();
 		//back ground imageView
@@ -197,6 +215,16 @@ public class View extends Application {
 		Rectangle inBoardV2 = new Rectangle(2, 540);
 		inBoardV2.relocate(409, 50);
 		view.getChildren().add(inBoardV2);
+		
+		//Create a drop down menu for save and load options.
+		Menu Options = new Menu("Options");
+		MenuItem menuItem1 = new MenuItem("Save");
+		MenuItem menuItem2 = new MenuItem("Load");
+		Options.getItems().add(menuItem1);
+		Options.getItems().add(menuItem2);
+		MenuBar menuBar = new MenuBar();
+		menuBar.getMenus().add(Options);
+		view.getChildren().add(menuBar);
 		
 		model = new SudokuModel();
 		model.genNewGame();
@@ -243,7 +271,44 @@ public class View extends Application {
 		timeText = new Text(648, 630, "00:00");
 		timeText.setFont(new Font(40));
 		view.getChildren().add(timeText);
+
 		initController(scene);
+
+
+		//Instructions for when save is selected
+		menuItem1.setOnAction(e -> {
+		    System.out.println("Save is Selected");
+		    save.setBoard(this.model.board);
+		    	int saveStatus=save.saveFile();
+				if (saveStatus==0) {
+					System.out.println("Save succesfull");
+				}
+				else {
+					System.out.println("Save unsuccesfull");
+				}    
+		});
+		
+		// Instructions for when load is selected
+		menuItem2.setOnAction(e -> {
+		    System.out.println("Load is Selected");
+					FileInputStream fileinput;
+					try {
+						fileinput = new FileInputStream("save.ser");
+						ObjectInputStream object = new ObjectInputStream(fileinput);
+						System.out.println("Deserialising");
+						Board boardLoaded=(Board) object.readObject();
+						object.close();
+						System.out.println("Setting board");
+						model.setBoard(boardLoaded);
+						
+					} catch (FileNotFoundException e1) {
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (ClassNotFoundException e1) {
+						e1.printStackTrace();
+					}
+		});
 		return scene;
 	}
 	
@@ -259,7 +324,7 @@ public class View extends Application {
 				numView[x][y][i % 3 + 1][i / 3 + 1].setVisible(false);;
 			}
 			numView[x][y][0][0].setImage(Box.nums[model.board.getUserNum(x, y).get(0)]);
-			//System.out.println(model.board.getUserNum(x, y).get(0));
+			
 		}else if (model.board.getUserNum(x, y).size() >= 1){ //show temp views
 			numView[x][y][0][0].setImage(null);
 			for (int i = 0; i < 9; i++) {
