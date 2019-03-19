@@ -28,11 +28,6 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 |![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/234711F562224A1A9B0A69BE3A8E48E8/155)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/88F8522FC4D74A9FA5B91CBE40D1E2E9/180) |
 
 
-[[back to top]](https://github.com/Hublove/Sudoku-290#navigation)
-
-- 
-[[back to top]](https://github.com/Hublove/Sudoku-290#navigation)
-
 
 ## Get started
 ### Download
@@ -42,8 +37,8 @@ You can download the game from here:
 ### Installation
 
 Before you start the installation, make sure:
-	- You have Java JDK installed.
-		- `sudo apt-get install openjdk-7-jdk`
+- You have Java JDK installed.
+	-`sudo apt-get install openjdk-7-jdk`
 	- Or you are running Java(1.8)
 
 1. Open terminal.
@@ -53,14 +48,13 @@ Before you start the installation, make sure:
 
 4. Compile the code. 
 
-	-`javac View.java`
+	-  `javac View.java`
 
 5. Run the code.
-	-`java View`
+
+	-  `java View`
 
 
-
-[[back to top��]](https://github.com/Hublove/Sudoku-290#navigation)
 ## How to play
 1. Select a box on the board.
 	- The box should be highlighted in yellow outer edges. 
