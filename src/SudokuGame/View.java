@@ -1,9 +1,17 @@
 package SudokuGame;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
@@ -31,6 +39,8 @@ public class View extends Application{
 	
 	SudokuModel model;
 	Controller controller;
+	Save save= new Save();
+	Load load=new Load();
 	long timeCounter;
 	
 	public static void main(String[] args) {
@@ -101,6 +111,16 @@ public class View extends Application{
 		inBoardV2.relocate(409, 50);
 		view.getChildren().add(inBoardV2);
 		
+		//Create a drop down menu for save and load options.
+		Menu Options = new Menu("Options");
+		MenuItem menuItem1 = new MenuItem("Save");
+		MenuItem menuItem2 = new MenuItem("Load");
+		Options.getItems().add(menuItem1);
+		Options.getItems().add(menuItem2);
+		MenuBar menuBar = new MenuBar();
+		menuBar.getMenus().add(Options);
+		view.getChildren().add(menuBar);
+		
 		model = new SudokuModel();
 		System.out.println("Tried: " + model.genNewGame() + " times genNewGame");
 		model.diGenGame();
@@ -144,6 +164,48 @@ public class View extends Application{
 		timeText.setFont(new Font(40));
 		view.getChildren().add(timeText);
 
+		//Instructions for when save is selected
+		menuItem1.setOnAction(e -> {
+		    System.out.println("Save is Selected");
+		    save.setBoard(this.model.board);
+		    	try {
+					//FileOutputStream fileoutput = new FileOutputStream("save.ser");
+					int saveStatus=save.saveFile();
+				    if (saveStatus==0) {
+				    	System.out.println("Save succesfull");
+				    }
+				    else {
+				    	System.out.println("Save unsuccesfull");
+				    }
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}    
+		});
+		
+		// Instructions for when load is selected
+		menuItem2.setOnAction(e -> {
+		    System.out.println("Load is Selected");
+					FileInputStream fileinput;
+					try {
+						fileinput = new FileInputStream("save.ser");
+						ObjectInputStream object = new ObjectInputStream(fileinput);
+						System.out.println("Deserialising");
+						Board boardLoaded=(Board) object.readObject();
+						object.close();
+						System.out.println("Setting board");
+						model.setBoard(boardLoaded);
+						
+					} catch (FileNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (ClassNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		});
 		return scene;
 	}
 	
