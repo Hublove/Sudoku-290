@@ -38,8 +38,8 @@ You can download the game from here:
 
 Before you start the installation, make sure:
 - You have Java JDK installed.
-	-`sudo apt-get install openjdk-7-jdk`
-	- Or you are running Java(1.8)
+	- `sudo apt-get install openjdk-7-jdk`
+- You are running Java version 1.8
 
 1. Open terminal.
 2. Use `cd` to navigate to a directory where you want to save the game. 
