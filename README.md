@@ -5,7 +5,6 @@
 
 - [Game Info](https://github.com/Hublove/Sudoku-290#game-info)
   - [Game screen](https://github.com/Hublove/Sudoku-290#game-screen) 
-  - [Development information](https://github.com/Hublove/Sudoku-290#development-information)
 - [Get Started](https://github.com/Hublove/Sudoku-290#get-started)
   - [Download](https://github.com/Hublove/Sudoku-290#download)
   - [Installation](https://github.com/Hublove/Sudoku-290#installation)
@@ -13,7 +12,6 @@
   - [Game rules](https://github.com/Hublove/Sudoku-290#game-rules)
   - [Controls](https://github.com/Hublove/Sudoku-290#controls)
    - [Contributors](https://github.com/Hublove/Sudoku-290#contributors)
-  
 - [License](https://github.com/Hublove/Sudoku-290#license)
 
 
@@ -81,7 +79,7 @@ The game follows traditional Sudoku rules.
 - Screen Buttons
 
 
-|   Buttons           |   function     |
+|   Buttons           |   Function     |
 |--------------|---------------------|
 | ![image](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/578CED3C36CF402892494A981F3418BF/244)   |   Start a New Game  |
 | ![image](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/E515E5D41256468181739109F750050C/245)  | Submit Your Answer    |
@@ -89,7 +87,8 @@ The game follows traditional Sudoku rules.
 | ![image](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/32AC1229C47A44E3862D1B45A774C4B4/256)    | Timer     |
 
 
-- Images showing How The Game Works
+- Images Showing How The Game Works
+
  Action| Description of how it works
 ---|---
 |![row 1 col 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/BE617DFA67A94E44A0CF4593FD1D9298/326) | Choose a box |
