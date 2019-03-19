@@ -67,8 +67,9 @@ Before you start the installation, make sure:
 ### Game rules
 The game follows traditional Sudoku rules.
 
-- The game board has an 9x9  Board.
-	- Each each block is divided into nine small grid.You need to fill in the Spaces with Numbers 1-9, so that each number 1-9 appear only once in each row, column, and each blocks.
+- The game board is 9x9 grid divided into blocks:
+	- Each each block is a 9x9 grid divided into boxes.
+- You will fill each box with a number from 1 to 9, so that each row, column, and block has only one instance of each number from 1 to 9.. 
 	
 ### Controls
 
