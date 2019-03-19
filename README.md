@@ -28,10 +28,10 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 |![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/234711F562224A1A9B0A69BE3A8E48E8/155)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/88F8522FC4D74A9FA5B91CBE40D1E2E9/180) |
 
 
-[[back to top��]](https://github.com/Hublove/Sudoku-290#navigation)
+[[back to top]](https://github.com/Hublove/Sudoku-290#navigation)
 
 - 
-[[back to top��]](https://github.com/Hublove/Sudoku-290#navigation)
+[[back to top]](https://github.com/Hublove/Sudoku-290#navigation)
 
 
 ## Get started
@@ -95,15 +95,12 @@ The game follows traditional Sudoku rules.
 | ![image](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/32AC1229C47A44E3862D1B45A774C4B4/256)    | Timer     |
 
 
-
+- Images showing How The Game Works
  Action| Description of how it works
 ---|---
 |![row 1 col 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/BE617DFA67A94E44A0CF4593FD1D9298/326) | Choose a box |
 ![image](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/0CBB6F63ED31493CA21DDD46E6F71286/327)| Input number 1
 |![row 2 col 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/18BA192111A04D5D9D6F15A6279F3712/271) | Input other numbers for future moves |
-
-[[back to top��]](https://github.com/Hublove/Sudoku-290#navigation)
-
 
 
 ## Contributors
@@ -144,9 +141,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-
-
-\
-\
-\
-[[back to top��]](https://github.com/Hublove/Sudoku-290#navigation)
