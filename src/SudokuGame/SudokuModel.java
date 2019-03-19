@@ -305,4 +305,8 @@ public class SudokuModel {
         return true;
     }
 
+	public void setBoard(Board boardLoaded) {
+		this.board=boardLoaded;		
+	}
+
 }

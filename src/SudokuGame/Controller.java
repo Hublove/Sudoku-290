@@ -4,12 +4,15 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 /**
- * abstract class for controllers
- *
+ * The Controller class is an abstract class that contains instructions based on each user input.
+ * Implementation for selected functions are in the main SudokuController class.
  */
 public abstract class Controller {
 	View view;
-	
+	/**
+	 * The builder function accepts the current view of the game and can be used by all of Controllers child classes.
+	 * @param view the current view the user has control over.
+	 */
 	Controller(View view){
 		this.view = view;
 	}
