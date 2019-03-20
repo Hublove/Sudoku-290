@@ -33,16 +33,14 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 ### Installation
 
 1. Before you install, please make sure the Java version 
-you are running is JavaSE-1.8
+you are running is JavaSE-1.8. 
 	
-
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/Hublove/Sudoku-290/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download Hublove/Sudoku-290 on GitHub">Download</a>
 
-
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 ## How to play
 1. Select a box on the board.
