@@ -128,13 +128,14 @@
 | `SudokuModel()` | Initializes SudokuModel class. |
 | `void diGenGame`<br>`(String diff)` | Sets the difficulty of the Board. |
 | `void genNewGame()` | Generates a random Board based on the rules of Sudoku. |
-| `void setRow`<br>`(Board board, int[] row, int rowNum)` |  |
-| `void shiftRow`<br>`(int[] row, int amount)` |  |
+| `void setRow`<br>`(Board board, int[] row, int rowNum)` | Copies the given row at the given rowNum to the board. |
+| `void shiftRow`<br>`(int[] row, int amount)` | Shifts the given row by a given amount. |
 | `boolean isInRow`<br>`(int[] row, int num)` | Returns true if inputted num already exists in row. |
 | `boolean isBlockSolved`<br>`(Block block)` | Returns true if inputted block has one instance of 1 to 9. |
 | `boolean isRowSolved` <br>`(Board board, int rowNum)` | Returns true if row at inputted rowNum has one instance of 1 to 9 on the inputted board. |
 | `boolean isColumnSolved`<br>`(Board board, int colNum)` | Returns true if inputted column at inputted colNum has one instance of 1 to 9 on the inputted board. |
 | `boolean isGameSolved()` | Returns true if the game is solved according to the rules of Sudoku. |
+
 
 ## View Class
 - The View determines the visual design of the game. 
@@ -185,13 +186,12 @@
 | Function | Function Definition |
 |-----------------------------------------|--------------------------------------------------------------------------------------------|
 | `SudokuController`<br>`(View view)` | Initializes class Sudoku Controller. Connects with the inputted view and starts the timer. |
-| `updateEdit`<br>`(int x, int y)` |  |
-| `void tryUpdate`<br>`(int way)` |  |
+| `updateEdit`<br>`(int x, int y)` |  Highlights the box selected by a user based on where the user clicked. |
+| `void tryUpdate`<br>`(int way)` | Checks if the box is selectable by the user and modifies select accordingly.  |
 | `void mousePressed`<br>`(MouseEvent e)` | Defines the actions when the mouse is pressed. |
 | `void mouseMoved`<br>`(MouseEvent e)` | Defines the actions when the mouse moves. |
 | `void keyPressed`<br>`(KeyEvent event)` | Defines the actions when a key is pressed on the keyboard. |
 | `void updateTimer()` | Updates timer. |
-
 
 ## ButtonPanel Class
 - The ButtonPanel class is visually defined as the three buttons on the right-hand side of the board.
@@ -202,18 +202,16 @@
 
 
 ### ButtonPanel's Variables
-| Variable | Variable definition |
+| Variable | Variable Definition |
 |-----------------------------|-------------------------------------------------------------------|
 | `final int BUTTONNUM = 3` | Defines the number of buttons on the Button Panel. |
-| `int MAXLENGTH = 100` |  |
+| `int MAXLENGTH = 100` | The length that the button can extend outwards.  |
 | `int CHANGESPEED = 10` | Defines the speed of the button’s movement. |
 | `Double animationCounter[]` |  |
 | `ImageView buttonView[]` | An array of ImageViews containing the buttons’ background images. |
 | `ImageView textView[]` | An array of ImageViews containing the buttons’ text images. |
 | `boolean select[]` | An array of booleans indicating if a button has been selected. |
-| `Group views` |  |
-
-
+| `Group views` | Group all the components of the ButtonPanel.  |
 
 
 ### ButtonPanel's Functions
