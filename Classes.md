@@ -116,10 +116,12 @@
 ### SudokuModel's Variables
 
 | Variable | Variable Definition |
-|---------------------|----------------------------------|
-| `Block blocks[]` | An empty array of Block classes. |
-| `boolean isEditing` |  |
-| `int editIndex[]` |  |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `Block blocks[9]` | An empty array of Block classes. |
+| `boolean isEditing` | isEditing is true when the Box is awaiting input from the user.  |
+| `int editIndex[2]` | The xy-coordinates of the Box that is waiting for the user's input. editIndex[0] is the x-coordinate and editIndex[1] is the y-coordinate.  |
+
+
 
 ### SudokuModel's Functions
 
@@ -145,10 +147,10 @@
 ### View's Variables
 
 | Variable | Variable Definition |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
-| `ImageView`<br>  `numView[][][][]` |  |
-| `ImageView numBackView[][]` |  |
-| `ImageView gearView` |  |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ImageView`<br>  `numView[][][][]` | The first and second indices indicate the xy-coordinates of the Box on the Board (these indices range from 0 to 8). The third and fourth indices indicate the location of a number inside the Box (these indices range from 0 to 3). If the third and fourth indices are 0, then there is only one number inside the Box. |
+| `ImageView numBackView[][]` | Responsible for managing the selected(yellow) and de-selected(brown) backgrounds on the Board. The indices indicate the xy-coordinate of the Box on the Board. The first index is the x-coordinate of the Box and the second index is the y-coordinate of the Box.  |
+| `ImageView gearView` | The background image for the gear on the Board.  |
 | `SudokuModel model` | Defines the Model for the game. |
 | `Controller controller` | Defines the Controller for the game. |
 | `ButtonPanel buttonPanel` | Defines the ButtonPanel for the game. |
@@ -203,15 +205,15 @@
 
 ### ButtonPanel's Variables
 | Variable | Variable Definition |
-|-----------------------------|-------------------------------------------------------------------|
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `final int BUTTONNUM = 3` | Defines the number of buttons on the Button Panel. |
 | `int MAXLENGTH = 100` | The length that the button can extend outwards.  |
 | `int CHANGESPEED = 10` | Defines the speed of the button’s movement. |
-| `Double animationCounter[]` |  |
+| `Double animationCounter[]` | An array defining how far the button is moving from the side. A MAXLENGTH of 0 indicates the button is still at the side of the Board. A MAXLENGTH of 100 is fully outwards from the side of the Board.  |
 | `ImageView buttonView[]` | An array of ImageViews containing the buttons’ background images. |
 | `ImageView textView[]` | An array of ImageViews containing the buttons’ text images. |
 | `boolean select[]` | An array of booleans indicating if a button has been selected. |
-| `Group views` | Group all the components of the ButtonPanel.  |
+| Group views | Group all the components of the ButtonPanel.  |
 
 
 ### ButtonPanel's Functions
