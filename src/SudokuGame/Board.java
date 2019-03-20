@@ -2,7 +2,6 @@ package SudokuGame;
 
 import java.util.ArrayList;
 
-
 /**
  * The class that will contain information about the whole Sudoku game board
  */

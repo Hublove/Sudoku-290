@@ -2,46 +2,43 @@
 
 ## 1. Add Sound Effects and Background Music
 
-- A new class: AudioConrol
-	- Variables store all audio files
-	- Functions will play and stop audio files
-	- Functions will change the volume
+- A new class: AudioControl
+	- Variables can store audio files.
+	- Functions can play and stop audio files.
+	- Functions can change the volume.
 	
 - Controller
-	- Call functions in AudioConrol to play audios at proper time
+	- Call functions in AudioControl to play audio files at proper time.
 	
 - View
-	- Initiallize AudioConrol
+	- Initialize AudioControl.
 	
 ## 2. Move Images to Seperate Class to Make It Changeable
 
-- A abstract class: SudokuImages
-	- Contain all the name of Images
+- Create an abstract class called SudokuImages.
+	- Contain all the name of Images.
 	
-- Classes extends SudokuImages
-	- Such as DefaultImages
-		- Contain all the Images that is using now
-	- Other classes contain Images for different styles
-	
+- Classes inherit from SudokuImages.
+	- DefaultImages
+		- Contain all the images that are being used.
 	
 - View
-	- A new variable sudokuImages and set it to DefaultImages
-	- Setter function to change sudokuImages
+	- Create a new variable sudokuImages and set it to DefaultImages.
+	- Create a setter function to change sudokuImages.
 	
-
 ## 3. Create a Setting Panel
 
 - Modify the theme of the board by:
-	- Call setter in View that set the sudokuImages
+	- Calling setter in View to set different sudokuImages according to level of difficulty.
 	
 - Change the volume of Sound Effects or Background Music
-	- Call functions in AudioConrol
+	- Call functions in AudioControl.
 	
-- Change the difficulty of the Sudoku game
-	- Make View call diGenGame by passing different arguments
+- Change the difficulty of the sudoku game
+	- Have View call diGenGame to generate different difficulty settings.
 	
 - View
-	- A init funcion similar to initGameStartScene
+	- A init function similar to initGameStartScene.
 	
 - Controller
 	- A new Controller class: settingController
@@ -49,30 +46,30 @@
 ## 4. Unlock Feature
 
 - SudokuModel
-	- Store information about how many times player played
+	- Store information about how many times player played.
 	
 - Setting Panel
-	- Make different theme be able to select or not based on the information in SudokuModel
-	
+	- Have different selectable themes.
+		
 - New class: SaveControl
-	- Save the information in SudokuModel related to unlock
+	- Save the information in SudokuModel related to unlocking new features.
 	
 - SudokuController
-	- Call SaveControl when a game finished
+	- Call SaveControl when a game is finished.
 	
 - View
-	- Call SaveControl to load saved information when application start
+	- Call SaveControl to load saved information when the application starts.
 	
 ## 5. High Score Board
 
 - SudokuModel
-	- Store high scores of every difficulty
+	- Store high scores for every difficulty.
 	
 - SaveControl
-	- Also save and load high scores
+	- Saves and loads high scores.
 	
 - View
-	- A init funcion similar to initGameStartScene to change to score board sceen
+	- A init funcion similar to initGameStartScene to change to score board screen.
 	
 - SudokuController
-	- Save the time spent of a game as the scores to SudokuModel when a game finished
+	- Save the time spent of a game as the scores to SudokuModel when a game finished.
