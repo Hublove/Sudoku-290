@@ -34,23 +34,16 @@ You can download the game from here:
 
 ### Installation
 
-Before you start the installation, make sure:
-- You have Java JDK installed.
-	- `sudo apt-get install openjdk-7-jdk`
-- You are running Java version 1.8 (JavaSE-1.8)
+1. **Before you install, please make sure the Java version 
+you are running is JavaSE-1.8**
+	
 
-1. Open terminal.
-2. Use `cd` to navigate to a directory where you want to save the game. 
-3. Clone the repository:
-	- `git clone https://github.com/Hublove/Sudoku-290.git`
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-4. Compile the code. 
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Hublove/Sudoku-290/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download Hublove/Sudoku-290 on GitHub">Download</a>
 
-	-  `javac View.java`
-
-5. Run the code.
-
-	-  `java View`
 
 
 ## How to play
