@@ -32,7 +32,7 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 
 ### Installation
 
-1. **Before you install, please make sure the Java version 
+- **Before you install, please make sure the Java version 
 you are running is JavaSE-1.8.**
 	
 
