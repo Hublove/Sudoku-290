@@ -6,7 +6,7 @@
 	- `image` contains the PNG versions of the original button images.
 	- `image.num` contains the PNG versions of the original number images.
 	-`Classes.md` contains information on the directory, the main functions, and the main classes of the game. 
-	-`Extension.md` contains information on one method to extend the game. 
+	-`Extension.md` contains information on different methods to extend the game. 
 	- `README.md` contains information on how to run and play the game. 
 	- `SudokuGame` contains all the classes of the game. 
 
@@ -18,13 +18,13 @@
 | ButtonPanel.java | Generates the buttons on the game board. |
 | Load.java | Loads game from user's computer. |
 | Save.java | Saves game to user's computer. |
-| Controller | Register's user input from keyboard and mouse. |
+| Controller.java | Register's user input from keyboard and mouse. |
 | StartController.java | Extends Controller to update current View. |
 | SudokuController.java | The SudokuController class is a child class of Controller and is responsible for handling key and mouse events for the Controller. This class is also responsible for directly updating the model and setting new values for the game based on user input. |
 | SudokuModel.java | Represents the data in the game. |
 | View.java | Implements the appearance of the game by displaying the start screen, the instruction screen and the game screen with several buttons. |
-
-
+| Load.java | Loads saved game data from a file. |
+| Save.java | Responsible for saving a board object to a set file.  |
 
 ## Box Class
 
@@ -116,10 +116,12 @@
 ### SudokuModel's Variables
 
 | Variable | Variable Definition |
-|---------------------|----------------------------------|
-| `Block blocks[]` | An empty array of Block classes. |
-| `boolean isEditing` |  |
-| `int editIndex[]` |  |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `Block blocks[9]` | An empty array of Block classes. |
+| `boolean isEditing` | isEditing is true when the Box is awaiting input from the user.  |
+| `int editIndex[2]` | The xy-coordinates of the Box that is waiting for the user's input. editIndex[0] is the x-coordinate and editIndex[1] is the y-coordinate.  |
+
+
 
 ### SudokuModel's Functions
 
@@ -128,7 +130,7 @@
 | `SudokuModel()` | Initializes SudokuModel class. |
 | `void diGenGame`<br>`(String diff)` | Sets the difficulty of the Board. |
 | `void genNewGame()` | Generates a random Board based on the rules of Sudoku. |
-| `void setRow`<br>`(Board board, int[] row, int rowNum)` | Copies the given row to the rowNum row on the board. |
+| `void setRow`<br>`(Board board, int[] row, int rowNum)` | Copies the given row at the given rowNum to the board. |
 | `void shiftRow`<br>`(int[] row, int amount)` | Shifts the given row by a given amount. |
 | `boolean isInRow`<br>`(int[] row, int num)` | Returns true if inputted num already exists in row. |
 | `boolean isBlockSolved`<br>`(Block block)` | Returns true if inputted block has one instance of 1 to 9. |
@@ -145,10 +147,10 @@
 ### View's Variables
 
 | Variable | Variable Definition |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
-| `ImageView`<br>  `numView[][][][]` |  |
-| `ImageView numBackView[][]` |  |
-| `ImageView gearView` |  |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ImageView`<br>  `numView[][][][]` | The first and second indices indicate the xy-coordinates of the Box on the Board (these indices range from 0 to 8). The third and fourth indices indicate the location of a number inside the Box (these indices range from 0 to 3). If the third and fourth indices are 0, then there is only one number inside the Box. |
+| `ImageView numBackView[][]` | Responsible for managing the selected(yellow) and de-selected(brown) backgrounds on the Board. The indices indicate the xy-coordinate of the Box on the Board. The first index is the x-coordinate of the Box and the second index is the y-coordinate of the Box.  |
+| `ImageView gearView` | The background image for the gear on the Board.  |
 | `SudokuModel model` | Defines the Model for the game. |
 | `Controller controller` | Defines the Controller for the game. |
 | `ButtonPanel buttonPanel` | Defines the ButtonPanel for the game. |
@@ -203,15 +205,15 @@
 
 ### ButtonPanel's Variables
 | Variable | Variable Definition |
-|-----------------------------|-------------------------------------------------------------------|
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `final int BUTTONNUM = 3` | Defines the number of buttons on the Button Panel. |
 | `int MAXLENGTH = 100` | The length that the button can extend outwards.  |
 | `int CHANGESPEED = 10` | Defines the speed of the button’s movement. |
-| `Double animationCounter[]` |  |
+| `Double animationCounter[]` | An array defining how far the button is moving from the side. A MAXLENGTH of 0 indicates the button is still at the side of the Board. A MAXLENGTH of 100 is fully outwards from the side of the Board.  |
 | `ImageView buttonView[]` | An array of ImageViews containing the buttons’ background images. |
 | `ImageView textView[]` | An array of ImageViews containing the buttons’ text images. |
 | `boolean select[]` | An array of booleans indicating if a button has been selected. |
-| `Group views` | Group all the components of the ButtonPanel.  |
+| Group views | Group all the components of the ButtonPanel.  |
 
 
 ### ButtonPanel's Functions
@@ -224,6 +226,24 @@
 | `void`<br>`updateAnimation()` | Update animationCounter[] and relocate ImageViews. |
 
 
+## Load Class
 
+- The Load class deserializes and loads saved game data from a file. 
 
+### Load's Variables
+| Function | Function Definition |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `void setBoard(Board board)` | This function sets the new board extracted from the file. |
+| `Board get Board()` | This function returns the board currently set for the class. |
+| `Board loadFile(FileInputStream file)` | Reads in the board from the inputted file, sets it to the classes board, closes all the files, and handles the exceptions. |
+
+## Save Class
+
+- The Save class is responsible for saving a board object to a set file so the player can load previous game states.
+
+| Function | Function Definition |
+|------------------------------|---------------------------------------------|
+| `void setBoard(Board board)` | Sets the current board to be saved. |
+| `Board getBoard()` | Returns the current board to be saved.  |
+| `int saveFile()` | Responsible for saving the board to a file. |
 
