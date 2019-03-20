@@ -28,14 +28,12 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 
 
 ## Get started
-### Download
-You can download the game from here: 
-[Download now](https://drive.google.com/file/d/1zRW2ySEBLtMFlv5GSzsgUaTIgL7J-vBu/view?usp=sharing)
+
 
 ### Installation
 
-1. **Before you install, please make sure the Java version 
-you are running is JavaSE-1.8**
+1. Before you install, please make sure the Java version 
+you are running is JavaSE-1.8
 	
 
 <!-- Place this tag in your head or just before your close body tag. -->
