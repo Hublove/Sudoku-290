@@ -37,10 +37,10 @@ you are running is JavaSE-1.8.**
 	
 
 <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/Hublove/Sudoku-290/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download Hublove/Sudoku-290 on GitHub">Download</a>
+<a class="github-button" href="https://github.com/Hublove/Sudoku-290/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download Hublove/Sudoku-290 on GitHub">Download Zip File</a>
 
 
-## How to play
+## How to Play
 1. Select a box on the board.
 	- The box should be highlighted in yellow outer edges. 
 2. Input a number(s) from 1 to 9 in the box.
