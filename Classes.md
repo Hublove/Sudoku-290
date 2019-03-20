@@ -5,10 +5,25 @@
 - `src` contains all the Java source code
 	- `image` contains the PNG versions of the original button images.
 	- `image.num` contains the PNG versions of the original number images.
-	- `SudokuGame` contains all the classes of the game. 
-	- `README.md` contains information on how to run and play the game. 
 	-`Classes.md` contains information on the directory, the main functions, and the main classes of the game. 
 	-`Extension.md` contains information on one method to extend the game. 
+	- `README.md` contains information on how to run and play the game. 
+	- `SudokuGame` contains all the classes of the game. 
+
+| Class | Class Description |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Box.java | Generates a Box containing one or more integers. |
+| Block.java | Generates a Block with 9 Boxes. |
+| Board.java | Generates the game board with 9 Blocks.  |
+| ButtonPanel.java | Generates the buttons on the game board. |
+| Load.java | Loads game from user's computer. |
+| Save.java | Saves game to user's computer. |
+| Controller | Register's user input from keyboard and mouse. |
+| StartController.java | Extends Controller to update current View. |
+| SudokuController.java | The SudokuController class is a child class of Controller and is responsible for handling key and mouse events for the Controller. This class is also responsible for directly updating the model and setting new values for the game based on user input. |
+| SudokuModel.java | Represents the data in the game. |
+| View.java | Implements the appearance of the game by displaying the start screen, the instruction screen and the game screen with several buttons. |
+
 
 
 ## Box Class
