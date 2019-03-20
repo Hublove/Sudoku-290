@@ -18,13 +18,13 @@
 | ButtonPanel.java | Generates the buttons on the game board. |
 | Load.java | Loads game from user's computer. |
 | Save.java | Saves game to user's computer. |
-| Controller | Register's user input from keyboard and mouse. |
+| Controller.java | Register's user input from keyboard and mouse. |
 | StartController.java | Extends Controller to update current View. |
 | SudokuController.java | The SudokuController class is a child class of Controller and is responsible for handling key and mouse events for the Controller. This class is also responsible for directly updating the model and setting new values for the game based on user input. |
 | SudokuModel.java | Represents the data in the game. |
 | View.java | Implements the appearance of the game by displaying the start screen, the instruction screen and the game screen with several buttons. |
-
-
+| Load.java | Loads saved game data from a file. |
+| Save.java | Responsible for saving a board object to a set file.  |
 
 ## Box Class
 
@@ -226,6 +226,24 @@
 | `void`<br>`updateAnimation()` | Update animationCounter[] and relocate ImageViews. |
 
 
+## Load Class
 
+- The Load class deserializes and loads saved game data from a file. 
 
+### Load's Variables
+| Function | Function Definition |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| `void setBoard(Board board)` | This function sets the new board extracted from the file. |
+| `Board get Board()` | This function returns the board currently set for the class. |
+| `Board loadFile(FileInputStream file)` | Reads in the board from the inputted file, sets it to the classes board, closes all the files, and handles the exceptions. |
+
+## Save Class
+
+- The Save class is responsible for saving a board object to a set file so the player can load previous game states.
+
+| Function | Function Definition |
+|------------------------------|---------------------------------------------|
+| `void setBoard(Board board)` | Sets the current board to be saved. |
+| `Board getBoard()` | Returns the current board to be saved.  |
+| `int saveFile()` | Responsible for saving the board to a file. |
 
