@@ -23,7 +23,7 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 
 |![Screen 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/CDD7D7346941404B9B621FBCC246BA4A/353) |![Screen 2](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/059C0B8104CD405CB9A49EB7928E1262/350) |
 |---------------------------------------------|---------------------------------------------|
-|![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/405C9B92C0D54E899F2EABDF00A4C922/348)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/F936B211C41A4683835CC4F88B2321EF/352) |
+|![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/405C9B92C0D54E899F2EABDF00A4C922/348)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/08128B0DC42B490494D20F1AC4E67694/357) |
 
 
 
