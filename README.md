@@ -21,9 +21,9 @@ The classic puzzle game recreated using `Java` and `JavaFX`.
 
 ### Game screen
 
-|![Screen 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/0A32819822D7487D9AA0A0CF070EEB87/135) |![Screen 2](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/D16FF0FEA2184090BFF8A08014A7A623/167) |
+|![Screen 1](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/CDD7D7346941404B9B621FBCC246BA4A/353) |![Screen 2](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/059C0B8104CD405CB9A49EB7928E1262/350) |
 |---------------------------------------------|---------------------------------------------|
-|![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/234711F562224A1A9B0A69BE3A8E48E8/155)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/88F8522FC4D74A9FA5B91CBE40D1E2E9/180) |
+|![Screen 3](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/405C9B92C0D54E899F2EABDF00A4C922/348)| ![Screen 4](https://note.youdao.com/yws/public/resource/b246b535f6d938f4575d3115e0ce3bcb/xmlnote/F936B211C41A4683835CC4F88B2321EF/352) |
 
 
 
