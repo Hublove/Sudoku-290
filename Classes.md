@@ -128,7 +128,7 @@
 | `SudokuModel()` | Initializes SudokuModel class. |
 | `void diGenGame`<br>`(String diff)` | Sets the difficulty of the Board. |
 | `void genNewGame()` | Generates a random Board based on the rules of Sudoku. |
-| `void setRow`<br>`(Board board, int[] row, int rowNum)` | Copies the given row at the given rowNum to the board. |
+| `void setRow`<br>`(Board board, int[] row, int rowNum)` | Copies the given row to the rowNum row on the board. |
 | `void shiftRow`<br>`(int[] row, int amount)` | Shifts the given row by a given amount. |
 | `boolean isInRow`<br>`(int[] row, int num)` | Returns true if inputted num already exists in row. |
 | `boolean isBlockSolved`<br>`(Block block)` | Returns true if inputted block has one instance of 1 to 9. |
