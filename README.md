@@ -1,3 +1,7 @@
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/Hublove/Sudoku-290/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download Hublove/Sudoku-290 on GitHub">Download</a>
+
+
 #Sudoku
 
 The classic puzzle game recreated using `Java` and `JavaFX`.
